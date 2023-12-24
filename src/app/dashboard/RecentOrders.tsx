@@ -4,13 +4,23 @@ import { GrMonitor } from "react-icons/gr";
 import myData from '@/app/data/source.json'
 import Link from "next/link";
 
-export default function RecentOrders() {
+async function getData() {
+    const response = await fetch("http://localhost:8080/users", {
+        next: {
+            revalidate: 60
+        }
+    });
+    return response.json();
+}
+
+export default async function RecentOrders() {
+    const myData = await getData();
     return(
         <div className="w-full col-span-2 relative lg:h-[70vh] h-[50vh] m-auto p-4 border rounded-lg bg-white overflow-scroll">
             <h1>Источники</h1>
             <ul>
                 {
-                myData.map((data,id) => (
+                myData.map((data: any,id: any) => (
                         <li key={id} className="bg-gray-50 hover:bg-gray-100 rounded-lg my-3 p-2  flex items-center cursor-pointer">
                             
                             <div>
