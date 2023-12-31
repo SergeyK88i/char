@@ -7,7 +7,7 @@ import Link from "next/link";
 async function getData() {
     const response = await fetch("http://localhost:8080/users", {
         next: {
-            revalidate: 60
+            revalidate: 3
         }
     });
     return response.json();
@@ -21,16 +21,20 @@ export default async function RecentOrders() {
             <ul>
                 {
                 myData.map((data: any,id: any) => (
-                        <li key={id} className="bg-gray-50 hover:bg-gray-100 rounded-lg my-3 p-2  flex items-center cursor-pointer">
-                            
+                        <li 
+                        key={id}
+                        className="bg-gray-50 hover:bg-gray-100 rounded-lg my-3 p-2  flex items-center cursor-pointer"
+                        
+                        >
+                        
                             <div>
                                 <GrMonitor />
 
                             </div>
                             <div className="pl-4 font-normal">
-                            {/* <Link href={`/dashboard/${post.id}`}>{post.title}</Link> */}
+                           
                                <Link href={`/dashboard/${data.id}`}>{data.name}</Link> 
-                                {/* <p>{data.id}</p> */}
+                                
 
                             </div>
                         </li>

@@ -4,6 +4,9 @@ import Image from "next/image";
 import { FaTeamspeak } from "react-icons/fa";
 import { ImBarcode } from "react-icons/im";
 import { ImDatabase } from "react-icons/im";
+import { GrMonitor } from "react-icons/gr";
+import { TfiHome } from "react-icons/tfi";
+
 
 
 
@@ -15,7 +18,7 @@ export default function Slidebar ({children}) {
                 <div className="flex flex-col items-center ">
                     <Link href="/">
                         <div className="bg-purple-800 hover:bg-green-700 text-white p-3 rounded-lg inline-block">
-                            <FaTeamspeak size={20}/>
+                        <TfiHome  size={20}/>
                         </div>    
                     </Link>
                     <span className="border-b-[1px] border-gray-300 w-full p-2 m-2 "></span>
@@ -23,7 +26,7 @@ export default function Slidebar ({children}) {
                     <Link href="/dashboard">
                         <div className="bg-purple-800 hover:bg-green-700 text-white p-3 my-2 rounded-lg inline-block">
                             
-                            <ImBarcode size={20}/>
+                        <GrMonitor size={20}/>
                         </div>    
                     </Link>
                     <Link href="/integration">
