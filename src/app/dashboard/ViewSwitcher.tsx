@@ -13,7 +13,8 @@ export const ViewSwitcher: React.SFC<ViewSwitcherProps> = ({
 }) => {
   return (
     <div className="ViewContainer">
-      <button className="Button px-1" onClick={() => onViewModeChange(ViewMode.Day)}>
+      <button className="Button px-1" 
+      onClick={() => onViewModeChange(ViewMode.Day)}>
         День
       </button>
       <button

@@ -7,7 +7,7 @@ import { initTasks, getStartEndDateForProject } from "@/app/data/data";
 import { ViewSwitcher } from "@/app/dashboard/ViewSwitcher";
 
 export default function App() {
-  const [view, setView] = useState<ViewMode>(ViewMode.Day);
+  const [view, setView] = useState<ViewMode>(ViewMode.Month);
   const [tasks, setTasks] = useState<Task[]>(initTasks());
 
   const [isChecked, setIsChecked] = useState(false);
@@ -15,6 +15,7 @@ export default function App() {
 
   let rowHeight = 35;
   if (view === ViewMode.Month) {
+    //количество отоборажаемых месяцев на графике
     columnWidth = 300;
   } else if (view === ViewMode.Week) {
     columnWidth = 250;

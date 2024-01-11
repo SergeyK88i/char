@@ -29,7 +29,7 @@ export default function Slidebar ({children}) {
                         <GrMonitor size={20}/>
                         </div>    
                     </Link>
-                    <Link href="/integration">
+                    <Link href="/table">
                         <div className="bg-purple-800 hover:bg-green-700 text-white p-3 my-2 rounded-lg inline-block">
                             
                             <ImDatabase size={20}/>
