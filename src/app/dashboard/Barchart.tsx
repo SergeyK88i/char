@@ -16,7 +16,7 @@ export default function App() {
   let rowHeight = 35;
   if (view === ViewMode.Month) {
     //количество отоборажаемых месяцев на графике
-    columnWidth = 300;
+    columnWidth = 100;
   } else if (view === ViewMode.Week) {
     columnWidth = 250;
   }

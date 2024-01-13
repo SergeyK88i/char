@@ -20,11 +20,11 @@ import Link from "next/link"
 export type Payment = {
   id: string
   amount: number
-  statusEpic: "In Progress" | "Done" | "Open" | "failed"
+  statusEpic: "In Progress" | "Done" | "Open" | "Todo"
   name: string
   block: string
   view_table: string
-  stend: string
+  changeStatus: "IFT" | "PSI" | "Init TKK load" 
 }
 
 export const columns: ColumnDef<Payment>[] = [
@@ -119,7 +119,7 @@ export const columns: ColumnDef<Payment>[] = [
       },
     
       {
-        accessorKey: "stend",
+        accessorKey: "changeStatus",
         header: ({ column }) => {
           return (
             <Button

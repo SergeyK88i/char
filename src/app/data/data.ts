@@ -1,7 +1,140 @@
+// const t = {
+//   i: 1,
+//   d: "2023-07-10"
+// };
+
+// function start(startDate) {
+  // Ваш код для обработки startDate
+  // console.log(startDate);
+// }
+
+// Разбиваем строку 'd' на отдельные значения года, месяца и дня
+// const [year, month, day] = t.d.split("-");
+
+// Создание нового объекта Date с использованием отдельных значений
+// const startDate = new Date(year, month - 1, day);
 import { Task } from "gantt-task-react";
+
+function getData(id: number ) {
+  // Fetch data from your API here.
+  const v = [
+    {
+        id: "8",
+        amount: 100,
+        statusEpic: "In Progress",
+        name: "A",
+        block: "KIB",
+        view_table: "view",
+        changeStatus: "IFT",
+        startYear: 2024,
+        startMonth: 1,
+        startDay: 10,
+        endYear: 2024,
+        endMonth: 2,
+        endDay: 10
+
+    },
+    {
+        id: "9",
+        amount: 50,
+        statusEpic: "In Progress",
+        name: "B",
+        block: "RB",
+        view_table: "view",
+        changeStatus: "IFT",
+        startYear: 2024,
+        startMonth: 2,
+        startDay: 10,
+        endYear: 2024,
+        endMonth: 3,
+        endDay: 10
+    },
+    {
+        id: "10",
+        amount: 500,
+        statusEpic: "In Progress",
+        name: "C",
+        block: "KIB",
+        view_table: "view",
+        changeStatus: "PSI",
+        startYear: 2024,
+        startMonth: 3,
+        startDay: 10,
+        endYear: 2024,
+        endMonth: 4,
+        endDay: 10
+      },
+      {
+        id: "11",
+        amount: 500,
+        statusEpic: "In Progress",
+        name: "D",
+        block: "RB",
+        view_table: "view",
+        changeStatus: "Init TKK load",
+        startYear: 2024,
+        startMonth: 4,
+        startDay: 10,
+        endYear: 2024,
+        endMonth: 5,
+        endDay: 10
+      },
+      {
+        id: "12",
+        amount: 500,
+        statusEpic: "In Progress",
+        name: "F",
+        block: "RB",
+        view_table: "view",
+        changeStatus: "PSI",
+        startYear: 2024,
+        startMonth: 5,
+        startDay: 10,
+        endYear: 2024,
+        endMonth: 6,
+        endDay: 10
+      },
+      {
+        id: "7",
+        amount: 500,
+        statusEpic: "Todo",
+        name: "h",
+        block: "KIB",
+        view_table: "view",
+        changeStatus: "IFT",
+        startYear: 2024,
+        startMonth: 6,
+        startDay: 10,
+        endYear: 2024,
+        endMonth: 7,
+        endDay: 10
+      },
+    // ...
+  ]
+  const foundItem = v.find(item => item.id === id.toString());
+  return foundItem;
+}
+
+function getRandomNumber() {
+  const min = 7;
+  const max = 12;
+
+  // Генерация случайного числа в заданном диапазоне
+  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+  return randomNumber;
+}
 
 export const initTasks = () => {
   const currentDate = new Date();
+  
+  //создаем случайное число
+  const randomNum = getRandomNumber();
+  //добавляем дату
+  const startData = getData(randomNum)
+  console.log(startData);
+  
+
   const tasks: Task[] = [
     // {
     //   start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
@@ -13,53 +146,53 @@ export const initTasks = () => {
 
     //   hideChildren: false
     // },
-    {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-      end: new Date(
-        currentDate.getFullYear(),
-        currentDate.getMonth(),
-        2,
-        12,
-        28
-      ),
-      name: "K1",
-      id: "Task 0",
-      progress: 24,
-      type: "task",
-      project: "ProjectSample"
-    },
-    {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 2),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 4, 0, 0),
-      name: "K2",
-      id: "Task 1",
-      progress: 100,
-      // dependencies: ["Task 0"],
-      type: "task",
-      project: "ProjectSample",
-      styles: { progressColor: '#ffbb54', progressSelectedColor: '#ff9e0d' }
+    // {
+    //   start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
+    //   end: new Date(
+    //     currentDate.getFullYear(),
+    //     currentDate.getMonth(),
+    //     2,
+    //     12,
+    //     28
+    //   ),
+    //   name: "K1",
+    //   id: "Task 0",
+    //   progress: 24,
+    //   type: "task",
+    //   project: "ProjectSample"
+    // },
+    // {
+    //   start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 2),
+    //   end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 4, 0, 0),
+    //   name: "K2",
+    //   id: "Task 1",
+    //   progress: 100,
+    //   // dependencies: ["Task 0"],
+    //   type: "task",
+    //   project: "ProjectSample",
+    //   styles: { progressColor: '#ffbb54', progressSelectedColor: '#ff9e0d' }
 
-    },
-    {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 4),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 8, 0, 0),
-      name: "K3",
-      id: "Task 2",
-      progress: 100,
-      // dependencies: ["Task 1"],
-      type: "task",
-      project: "ProjectSample"
-    },
-    {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 8),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 11, 0, 0),
-      name: "Разработка. К4",
-      id: "Task 3",
-      progress: 100,
-      // dependencies: ["Task 2"],
-      type: "task",
-      project: "ProjectSample"
-    },
+    // },
+    // {
+    //   start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 4),
+    //   end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 8, 0, 0),
+    //   name: "K3",
+    //   id: "Task 2",
+    //   progress: 100,
+    //   // dependencies: ["Task 1"],
+    //   type: "task",
+    //   project: "ProjectSample"
+    // },
+    // {
+    //   start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 8),
+    //   end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 11, 0, 0),
+    //   name: "Разработка. К4",
+    //   id: "Task 3",
+    //   progress: 100,
+    //   // dependencies: ["Task 2"],
+    //   type: "task",
+    //   project: "ProjectSample"
+    // },
     // {
     //   start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 8),
     //   end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 10),
@@ -93,8 +226,10 @@ export const initTasks = () => {
     //   dependencies: ["Task 0"],
     // },
     {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 4),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 5),
+      start: new Date(startData?.startYear as number, startData?.startMonth as number, startData?.startDay),
+      end: new Date(startData?.endYear as number, startData?.endMonth as number, startData?.endDay ),
+      // start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 4),
+      // end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 5),
       name: "ИФТ. К5",
       id: "Task 10",
       progress: 100,
@@ -118,20 +253,20 @@ export const initTasks = () => {
       name: "К6",
       id: "Task 12",
       progress: 70,
-      // isDisabled: true,
+      
       type: "task",
-      // dependencies: ["Task 9"],
+      
     },
-    {
-      start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 9),
-      end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 10),
-      name: "К7",
-      id: "Task 14",
-      progress: 100,
-      // isDisabled: true,
-      type: "task",
-      // dependencies: ["Task 12"],
-    },
+    // {
+    //   start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 9),
+    //   end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 10),
+    //   name: "К7",
+    //   id: "Task 14",
+    //   progress: 100,
+      
+    //   type: "task",
+      
+    // },
     {
       start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 9),
       end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 10),
@@ -164,7 +299,8 @@ export const initTasks = () => {
     },
     {
       start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 14),
-      // start: new Date(2023, 7, 7),
+      
+      // start: new Date(2023, 7, 10),
       // end: new Date(2023, 7, 10),
       end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 16,0,0),
 

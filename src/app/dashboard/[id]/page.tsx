@@ -1,7 +1,7 @@
 import myData from '@/app/data/source.json'
-
+// https://my-json-server.typicode.com/SergeyK88i/testDB/source
 async function getData(id: string) {
-    const response = await fetch(`http://localhost:8080/users/${id}`, {
+    const response = await fetch(`https://my-json-server.typicode.com/SergeyK88i/testDB/source/${id}`, {
         next: {
             revalidate: 5
         }
@@ -27,7 +27,7 @@ export default async function TopDashboard({params: {id} }: Props){
                     <h1 className="my-5 text-green-600 font-bold">Источник: {post?.name}</h1>
                     
                     {/* <p>КЭ: 000001</p> */}
-                    <p className='text-green-500'>Отв. от ДИТ: {post?.email}</p>
+                    <p className='text-green-500'>Отв. от ДИТ: {post?.ci}</p>
                     {/* <p>Отв. от SD: Солнцев А. В.</p> */}
                 </div>
             </div>

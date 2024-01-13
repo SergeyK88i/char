@@ -5,7 +5,7 @@ import myData from '@/app/data/source.json'
 import Link from "next/link";
 
 async function getData() {
-    const response = await fetch("http://localhost:8080/users", {
+    const response = await fetch("https://my-json-server.typicode.com/SergeyK88i/testDB/source", {
         next: {
             revalidate: 3
         }
