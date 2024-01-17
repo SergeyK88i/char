@@ -1,6 +1,7 @@
-import React from "react";
+
 import "gantt-task-react/dist/index.css";
 import { ViewMode } from "gantt-task-react";
+
 type ViewSwitcherProps = {
   isChecked: boolean;
   onViewListChange: (isChecked: boolean) => void;
@@ -11,8 +12,11 @@ export const ViewSwitcher: React.SFC<ViewSwitcherProps> = ({
   // onViewListChange,
   // isChecked
 }) => {
+
+
+   
   return (
-    <div className="ViewContainer">
+    <div className="ViewContainer" >
       <button className="Button px-1" 
       onClick={() => onViewModeChange(ViewMode.Day)}>
         День
@@ -29,6 +33,7 @@ export const ViewSwitcher: React.SFC<ViewSwitcherProps> = ({
       >
         Месяц
       </button>
+      
     </div>
   );
 };

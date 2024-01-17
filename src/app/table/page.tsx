@@ -4,27 +4,27 @@ import { DataTable } from "./data-table"
 async function getData(): Promise<Payment[]> {
   // Fetch data from your API here.
   return [
-    {
-        id: "8",
-        amount: 100,
-        statusEpic: "In Progress",
-        name: "A",
-        block: "KIB",
-        view_table: "view",
-        changeStatus: "IFT"
+    // {
+    //     id: "8",
+    //     amount: 100,
+    //     statusEpic: "In Progress",
+    //     name: "A",
+    //     block: "KIB",
+    //     view_table: "view",
+    //     changeStatus: "IFT"
 
-    },
+    // },
+    // {
+    //     id: "9",
+    //     amount: 50,
+    //     statusEpic: "In Progress",
+    //     name: "B",
+    //     block: "RB",
+    //     view_table: "view",
+    //     changeStatus: "IFT"
+    // },
     {
-        id: "9",
-        amount: 50,
-        statusEpic: "In Progress",
-        name: "B",
-        block: "RB",
-        view_table: "view",
-        changeStatus: "IFT"
-    },
-    {
-        id: "10",
+        id: "4",
         amount: 500,
         statusEpic: "In Progress",
         name: "C",
@@ -33,7 +33,7 @@ async function getData(): Promise<Payment[]> {
         changeStatus: "PSI"
       },
       {
-        id: "11",
+        id: "3",
         amount: 500,
         statusEpic: "In Progress",
         name: "D",
@@ -42,7 +42,7 @@ async function getData(): Promise<Payment[]> {
         changeStatus: "Init TKK load"
       },
       {
-        id: "12",
+        id: "2",
         amount: 500,
         statusEpic: "In Progress",
         name: "F",
@@ -51,10 +51,10 @@ async function getData(): Promise<Payment[]> {
         changeStatus: "PSI"
       },
       {
-        id: "7",
+        id: "1",
         amount: 500,
         statusEpic: "Todo",
-        name: "h",
+        name: "Земля",
         block: "KIB",
         view_table: "view",
         changeStatus: "IFT"

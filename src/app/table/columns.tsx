@@ -3,8 +3,8 @@
 import { ColumnDef } from "@tanstack/react-table"
 import {ArrowUpDown, MoreHorizontal } from "lucide-react"
 import { Checkbox } from "@/components/ui/checkbox"
-
- 
+import { FcBarChart } from "react-icons/fc";
+import { FcDownload } from "react-icons/fc";
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -134,6 +134,25 @@ export const columns: ColumnDef<Payment>[] = [
         },
       },
       {
+        id: "act",
+        // accessorKey: "view_table",
+        header: "",
+        cell: ({row}) => {
+          
+            const p = row.original
+            console.log(p.id);
+            return (
+              
+              
+                <div>
+                  <FcDownload size={20}/>
+                </div>
+                
+              
+            )
+        }
+      },
+      {
         id: "actions",
         // accessorKey: "view_table",
         header: "",
@@ -144,9 +163,12 @@ export const columns: ColumnDef<Payment>[] = [
             return (
               
               <Link href={`http://localhost:3000/dashboard/${p.id}`}>
-                <Button className="bg-blue-500 hover:bg-blue-400">
+                <div>
+                  <FcBarChart size={20}/>
+                </div>
+                {/* <Button className="bg-blue-500 hover:bg-blue-400">
                     view_table
-                </Button >
+                </Button > */}
               </Link>
             )
         }

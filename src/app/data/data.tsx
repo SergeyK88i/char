@@ -1,25 +1,11 @@
-// const t = {
-//   i: 1,
-//   d: "2023-07-10"
-// };
 
-// function start(startDate) {
-  // Ваш код для обработки startDate
-  // console.log(startDate);
-// }
-
-// Разбиваем строку 'd' на отдельные значения года, месяца и дня
-// const [year, month, day] = t.d.split("-");
-
-// Создание нового объекта Date с использованием отдельных значений
-// const startDate = new Date(year, month - 1, day);
 import { Task } from "gantt-task-react";
 
 function getData(id: number ) {
   // Fetch data from your API here.
   const v = [
     {
-        id: "8",
+        id: "1",
         amount: 100,
         statusEpic: "In Progress",
         name: "A",
@@ -35,7 +21,7 @@ function getData(id: number ) {
 
     },
     {
-        id: "9",
+        id: "2",
         amount: 50,
         statusEpic: "In Progress",
         name: "B",
@@ -50,7 +36,7 @@ function getData(id: number ) {
         endDay: 10
     },
     {
-        id: "10",
+        id: "3",
         amount: 500,
         statusEpic: "In Progress",
         name: "C",
@@ -65,7 +51,7 @@ function getData(id: number ) {
         endDay: 10
       },
       {
-        id: "11",
+        id: "4",
         amount: 500,
         statusEpic: "In Progress",
         name: "D",
@@ -79,36 +65,36 @@ function getData(id: number ) {
         endMonth: 5,
         endDay: 10
       },
-      {
-        id: "12",
-        amount: 500,
-        statusEpic: "In Progress",
-        name: "F",
-        block: "RB",
-        view_table: "view",
-        changeStatus: "PSI",
-        startYear: 2024,
-        startMonth: 5,
-        startDay: 10,
-        endYear: 2024,
-        endMonth: 6,
-        endDay: 10
-      },
-      {
-        id: "7",
-        amount: 500,
-        statusEpic: "Todo",
-        name: "h",
-        block: "KIB",
-        view_table: "view",
-        changeStatus: "IFT",
-        startYear: 2024,
-        startMonth: 6,
-        startDay: 10,
-        endYear: 2024,
-        endMonth: 7,
-        endDay: 10
-      },
+      // {
+      //   id: "12",
+      //   amount: 500,
+      //   statusEpic: "In Progress",
+      //   name: "F",
+      //   block: "RB",
+      //   view_table: "view",
+      //   changeStatus: "PSI",
+      //   startYear: 2024,
+      //   startMonth: 5,
+      //   startDay: 10,
+      //   endYear: 2024,
+      //   endMonth: 6,
+      //   endDay: 10
+      // },
+      // {
+      //   id: "7",
+      //   amount: 500,
+      //   statusEpic: "Todo",
+      //   name: "h",
+      //   block: "KIB",
+      //   view_table: "view",
+      //   changeStatus: "IFT",
+      //   startYear: 2024,
+      //   startMonth: 6,
+      //   startDay: 10,
+      //   endYear: 2024,
+      //   endMonth: 7,
+      //   endDay: 10
+      // },
     // ...
   ]
   const foundItem = v.find(item => item.id === id.toString());
@@ -116,8 +102,8 @@ function getData(id: number ) {
 }
 
 function getRandomNumber() {
-  const min = 7;
-  const max = 12;
+  const min = 1;
+  const max = 4;
 
   // Генерация случайного числа в заданном диапазоне
   const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;

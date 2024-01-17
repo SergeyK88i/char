@@ -30,8 +30,10 @@ import {
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
-import React from "react"
+import React, { useRef } from "react"
 import Link from "next/link"
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -69,6 +71,24 @@ export function DataTable<TData, TValue>({
     },
   })
 
+  const pdfRef = useRef();
+  const downloadPDF = () => {
+    const input = pdfRef.current;
+    html2canvas(input).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('l','mm','a4', true);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const imgWidth = canvas.width;
+      const imgHeight = canvas.height;
+      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+      const imgX = (pdfWidth - imgWidth * ratio) / 2;
+      const imgY = 30;
+      pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
+      
+      pdf.save('table.pdf');
+    })
+  }
   // фильтр по прогрессу
   function handleFilterStatus(arg: string){
     let allColumns = table.getAllColumns();
@@ -106,9 +126,13 @@ const handle_3 = () => {
     handleFilterBlock("KIB");
 }
   return (
-<div>
+<div className="p-5" ref={pdfRef}>
+  
 <>
-<Button onClick={() => handle_1()} className="bg-blue-400 hover:bg-blue-500">Status</Button>
+<div className="row text-center mt-5">
+    <button className="btn btn-primary" onClick={downloadPDF}>Download PDF</button>
+</div>
+<Button onClick={() => handle_1()} className="bg-blue-400 hover:bg-blue-500" >Status</Button>
 <Button onClick={() => handle_2()} className="mx-1 bg-blue-400 hover:bg-blue-500">РБ</Button>
 {/* <input type="checkbox" onChange={() => handle_2()} className="mx-1 bg-blue-400 hover:bg-blue-500" /> */}
 <Button onClick={() => handle_3()} className="bg-blue-400 hover:bg-blue-500">КИБ</Button>
@@ -151,7 +175,7 @@ const handle_3 = () => {
           onChange={(event) =>
             table.getColumn("name")?.setFilterValue(event.target.value)
           }
-          className="max-w-sm"
+          className="max-w-sm px-4 py-0"
         />
 </div>
     <div className="rounded-md border">
