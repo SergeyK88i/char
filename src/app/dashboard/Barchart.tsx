@@ -5,6 +5,7 @@ import { Gantt, Task, ViewMode } from "gantt-task-react";
 import { useState } from "react";
 import { initTasks, getStartEndDateForProject } from "@/app/data/data";
 import { ViewSwitcher } from "@/app/dashboard/ViewSwitcher";
+import RecentOrders from "./RecentOrders";
 
 export default function App() {
   const [view, setView] = useState<ViewMode>(ViewMode.Month);
@@ -67,14 +68,17 @@ export default function App() {
   };
 
   return (
-    <div className=" w-full md:col-span-10 relative lg:h-[70vh] h-[50vh] m-auto p-4 border rounded-lg bg-white">
+    <>
+    <div className=" flex flex-row items-center w-full md:col-span-12 relative lg:h-[8vh] h-[8vh] m-auto p-4 border rounded-lg bg-white">
       {/* <h3 className="px-1">Мониторинг</h3> */}
       <ViewSwitcher
         onViewModeChange={(viewMode: ViewMode) => setView(viewMode)}
         onViewListChange={setIsChecked}
         isChecked={isChecked}
       />
-      
+      <RecentOrders />
+      </div>
+      <div className=" w-full md:col-span-12 relative lg:h-[70vh] h-[50vh] m-auto p-4 border rounded-lg bg-white">
       <Gantt 
         tasks={tasks}
         viewMode={view}
@@ -93,6 +97,7 @@ export default function App() {
       />
       
     </div>
+    </>
   );
 }
 

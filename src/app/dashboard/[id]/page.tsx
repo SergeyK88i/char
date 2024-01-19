@@ -82,7 +82,7 @@ export default async function TopDashboard({params: {id} }: Props){
                 
                 <Barchart />
                 
-                <RecentOrders />
+                {/* <RecentOrders /> */}
                 
                 
             </div>
