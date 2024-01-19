@@ -74,6 +74,7 @@ export default function App() {
         onViewListChange={setIsChecked}
         isChecked={isChecked}
       />
+      
       <Gantt 
         tasks={tasks}
         viewMode={view}

@@ -20,34 +20,36 @@ import {
 import Link from "next/link"
 import { AiOutlineCheck } from "react-icons/ai";
 
-const frameworks = [
-    {
-        "id": "1",
-        "name": "земля",
-        "ci": "00000001",
-        "label": "Земля"
-    },
-    {
-        "id": "2",
-        "name": "луна",
-        "ci": "00000002",
-        "label": "Луна"
-    },
-    {
-        "id": "3",
-        "name": "юпитер",
-        "ci": "00000003",
-        "label": "Юпитер"
-    },
-    {
-        "id": "4",
-        "name": "солнце",
-        "ci": "00000004",
-        "label": "Солнце"
-    }
-]
-
-export default function ComboboxDemo() {
+// const frameworks = [
+//     {
+//         "id": 1,
+//         "name": "Экспертное",
+//         "ci": "00000001",
+//         "label": "Земля"
+//     },
+//     {
+//         "id": 2,
+//         "name": "Луна",
+//         "ci": "00000002",
+//         "label": "Луна"
+//     },
+//     {
+//         "id": 3,
+//         "name": "юпитер",
+//         "ci": "00000003",
+//         "label": "Юпитер"
+//     },
+//     {
+//         "id": 4,
+//         "name": "солнце",
+//         "ci": "00000004",
+//         "label": "Солнце"
+//     }
+// ]
+type Props = {
+    posts: any[]
+}
+const Select =({posts}: Props) => {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
 
@@ -59,20 +61,21 @@ export default function ComboboxDemo() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[500px] justify-between"
+          className="w-[700px] justify-between"
+          style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
         >
           {value
-            ? frameworks.find((framework) => framework.name === value)?.label
+            ? posts.find((framework) => framework.name.toLowerCase() === value.toLowerCase())?.label
             : "seach..."}
           {/* <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" /> */}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className="w-[800px] p-0">
         <Command>
           <CommandInput placeholder="input ..." className="h-9" />
           <CommandEmpty>NO .</CommandEmpty>
           <CommandGroup>
-            {frameworks.map((framework) => (
+            {posts.map((framework) => (
                 
               <CommandItem
                 key={framework.name}
@@ -84,7 +87,7 @@ export default function ComboboxDemo() {
                 }}
               >
                 {/* {framework.name} */}
-                <Link href={`/dashboard/${framework.id}`}>{framework.label}</Link>
+                <Link href={`/dashboard/${framework.id}`}>{framework.name}</Link>
                 <AiOutlineCheck
                   className={cn(
                     "ml-auto h-4 w-4",
@@ -100,3 +103,4 @@ export default function ComboboxDemo() {
     </Popover>
   )
 }
+export {Select}

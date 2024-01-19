@@ -9,21 +9,20 @@ export default function Dashoard() {
     return(
         
         <>
-    {/* <main className='bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-green-100 via-green-100 to-blue-100'> */}
+    <div>
       
       
-      <div className=" bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-green-100 via-green-100 to-blue-100 p-4 grid md:grid-cols-10 grid-cols-1 gap-2">
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 p-4 ">
         
-        <div className="lg:col-span-4 col-span-1 flex justify-between w-full bg-white">
+        <div style={{ marginTop: "-150px" }} >
         <RecentOrders />
         </div>
-        
-       
-        
+      </div>
+    </div>
       
-
+{/* 
       <div className="lg:col-span-6 col-span-1 flex justify-center items-center w-full bg-white  border p-4 rounded-lg"> 
-      {/* <p>TreeMap + фильтры</p> */}
+      
       <Image
           className=" relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert "
           src="/treemap-chart-colored.svg"
@@ -32,10 +31,10 @@ export default function Dashoard() {
           height={150}
           priority
         />  
-      </div>
+      </div> */}
         {/* <Barchart /> */}
         
-      </div>
+      {/* </div> */}
       
 </>
 

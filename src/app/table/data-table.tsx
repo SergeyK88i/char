@@ -50,8 +50,9 @@ export function DataTable<TData, TValue>({
       )
     const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({})
+   
     const [rowSelection, setRowSelection] = React.useState({})
-
+    console.log(rowSelection);
   const table = useReactTable({
     data,
     columns,
@@ -208,7 +209,7 @@ const handle_3 = () => {
               >
                 
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id}>
+                  <TableCell key={cell.id} style={{ maxWidth: "500px" }}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     
                   </TableCell>

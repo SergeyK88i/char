@@ -24,7 +24,7 @@ type Props = {
 
 
 export default async function TopDashboard({params: {id} }: Props){
-//     const pdfRef = useRef();
+    // const pdfRef = useRef();
 //   const downloadPDF = () => {
 //     const input = pdfRef.current;
 //     html2canvas(input).then((canvas) => {
@@ -52,11 +52,11 @@ export default async function TopDashboard({params: {id} }: Props){
                     <div className="flex flex-col w-full">
                         {/* <h2>Блок: КИБ </h2> */}
                         
-                        <h1 className="my-5 text-green-600 font-bold">Источник: {post?.tasks[0].duedate}</h1>
-                        
-                        {/* <p>КЭ: 000001</p> */}
+                        <h1 className="my-5 text-green-600 font-bold">Источник: {post?.name}</h1>
+                        {/* {post?.tasks[0].duedate} */}
+                        <p>КЭ: {post.ci}</p>
                         <p className='text-green-500'>Отв. от ДИТ: {post.ci}</p>
-                        {/* <p>Отв. от SD: Солнцев А. В.</p> */}
+                        <p>Отв. от SD: Солнцев А. В.</p>
                     </div>
                 </div>
                 <div className="lg:col-span-2 col-span-1 flex justify-between w-full bg-white  border p-4 rounded-lg">

@@ -27,8 +27,8 @@ async function getData(): Promise<Payment[]> {
         id: "4",
         amount: 500,
         statusEpic: "In Progress",
-        name: "C",
-        block: "KIB",
+        name: "Глобальное Инвестиционное Сотрудничество Глобальное Инвестиционное Сотрудничество",
+        block: "RB",
         view_table: "view",
         changeStatus: "PSI"
       },
@@ -36,7 +36,7 @@ async function getData(): Promise<Payment[]> {
         id: "3",
         amount: 500,
         statusEpic: "In Progress",
-        name: "D",
+        name: "Проактивные Инвестиционные Решения",
         block: "RB",
         view_table: "view",
         changeStatus: "Init TKK load"
@@ -45,8 +45,8 @@ async function getData(): Promise<Payment[]> {
         id: "2",
         amount: 500,
         statusEpic: "In Progress",
-        name: "F",
-        block: "RB",
+        name: "Инновационные Финансовые Ресурсы",
+        block: "KIB",
         view_table: "view",
         changeStatus: "PSI"
       },
@@ -54,7 +54,7 @@ async function getData(): Promise<Payment[]> {
         id: "1",
         amount: 500,
         statusEpic: "Todo",
-        name: "Земля",
+        name: "Экспертное Финансовое Консультирование",
         block: "KIB",
         view_table: "view",
         changeStatus: "IFT"

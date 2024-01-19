@@ -140,7 +140,7 @@ export const columns: ColumnDef<Payment>[] = [
         cell: ({row}) => {
           
             const p = row.original
-            console.log(p.id);
+            // console.log(p.id);
             return (
               
               
@@ -159,7 +159,7 @@ export const columns: ColumnDef<Payment>[] = [
         cell: ({row}) => {
           
             const p = row.original
-            console.log(p.id);
+            // console.log(p.id);
             return (
               
               <Link href={`http://localhost:3000/dashboard/${p.id}`}>
