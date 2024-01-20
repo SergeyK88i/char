@@ -31,7 +31,7 @@ export const initTasks = (data: any) => {
       //   28
       // ),
       start: new Date(K1_startYear,K1_startMonth, K1_startDay),
-      end: new Date(2025, K1_endMonth, K1_endDay ),
+      end: new Date(K1_endYear, K1_endMonth, K1_endDay ),
       name: "K1",
       id: "Task 0",
       progress: 100,

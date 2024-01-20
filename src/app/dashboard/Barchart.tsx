@@ -8,6 +8,7 @@ import { ViewSwitcher } from "@/app/dashboard/ViewSwitcher";
 import RecentOrders from "./RecentOrders";
 import { Button } from "@/components/ui/button";
 
+
 type Props = {
   data: any[]
 }
@@ -21,7 +22,7 @@ export default function App({data}:Props) {
 
   let rowHeight = 35;
   if (view === ViewMode.Month) {
-    columnWidth = 100;
+    columnWidth = 150;
   } else if (view === ViewMode.Week) {
     columnWidth = 250;
   }
@@ -83,10 +84,11 @@ export default function App({data}:Props) {
         />
         <RecentOrders />
         <Button> Сохранить в PDF </Button>
+        
       </div>
 
-      <div  className="flex flex-row items-start w-full md:col-span-12 relative lg:h-[70vh] h-[60vh] m-auto p-4 border rounded-lg bg-white overflow-x-auto">
-      {/* <div>
+      <div  className="flex flex-row items-start w-full md:col-span-12 relative lg:h-[60vh] h-[60vh] m-auto p-4 border rounded-lg bg-white overflow-auto">
+      <div>
           <ul>
             <li className="m-4">0</li>
             <li className="m-4">K1</li>
@@ -95,7 +97,7 @@ export default function App({data}:Props) {
             <li className="m-4">K4</li>
             <li className="m-4">K5</li>
           </ul>
-        </div> */}
+        </div>
         <Gantt 
           tasks={tasks}
           viewMode={view}
