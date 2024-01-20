@@ -66,14 +66,14 @@ const Select =({posts}: Props) => {
         >
           {value
             ? posts.find((framework) => framework.name.toLowerCase() === value.toLowerCase())?.label
-            : "seach..."}
+            : "Список источников"}
           {/* <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" /> */}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[800px] p-0">
         <Command>
-          <CommandInput placeholder="input ..." className="h-9" />
-          <CommandEmpty>NO .</CommandEmpty>
+          <CommandInput placeholder="Введите имя источника" className="h-9" />
+          <CommandEmpty>Источник не найден</CommandEmpty>
           <CommandGroup>
             {posts.map((framework) => (
                 

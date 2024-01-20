@@ -6,15 +6,16 @@ import React, { useRef } from "react"
 import Link from "next/link"
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { getId } from '../DownloadData';
 // https://my-json-server.typicode.com/SergeyK88i/testDB/source
-async function getData(id: string) {
-    const response = await fetch(`https://my-json-server.typicode.com/SergeyK88i/testDB/source/${id}`, {
-        next: {
-            revalidate: 5
-        }
-    });
-    return response.json();
-}
+// async function getData(id: string) {
+//     const response = await fetch(`https://my-json-server.typicode.com/SergeyK88i/testDB/source/${id}`, {
+//         next: {
+//             revalidate: 5
+//         }
+//     });
+//     return response.json();
+// }
 
 type Props = {
     params: {
@@ -42,7 +43,8 @@ export default async function TopDashboard({params: {id} }: Props){
 //       pdf.save('table.pdf');
 //     })
 //   }
-    const post = await getData(id)
+    // const post = await getData(id)
+    const post = await getId(id);
     console.log(post)
     return (
         <div>
@@ -80,7 +82,7 @@ export default async function TopDashboard({params: {id} }: Props){
             </div>
             <div className="p-4 grid md:grid-cols-12 grid-cols-1 gap-2">
                 
-                <Barchart />
+                <Barchart data={post}/>
                 
                 {/* <RecentOrders /> */}
                 

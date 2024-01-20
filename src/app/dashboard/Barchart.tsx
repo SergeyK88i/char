@@ -6,10 +6,15 @@ import { useState } from "react";
 import { initTasks, getStartEndDateForProject } from "@/app/data/data";
 import { ViewSwitcher } from "@/app/dashboard/ViewSwitcher";
 import RecentOrders from "./RecentOrders";
+import { Button } from "@/components/ui/button";
 
-export default function App() {
+type Props = {
+  data: any[]
+}
+
+export default function App({data}:Props) {
   const [view, setView] = useState<ViewMode>(ViewMode.Month);
-  const [tasks, setTasks] = useState<Task[]>(initTasks());
+  const [tasks, setTasks] = useState<Task[]>(initTasks(data));
 
   const [isChecked, setIsChecked] = useState(false);
   let columnWidth = 60;
@@ -69,34 +74,44 @@ export default function App() {
 
   return (
     <>
-    <div className=" flex flex-row items-center w-full md:col-span-12 relative lg:h-[8vh] h-[8vh] m-auto p-4 border rounded-lg bg-white">
-      {/* <h3 className="px-1">Мониторинг</h3> */}
-      <ViewSwitcher
-        onViewModeChange={(viewMode: ViewMode) => setView(viewMode)}
-        onViewListChange={setIsChecked}
-        isChecked={isChecked}
-      />
-      <RecentOrders />
+      <div className=" flex flex-row items-center w-full md:col-span-12 relative lg:h-[8vh] h-[8vh] m-auto p-4 border rounded-lg bg-white">
+        
+        <ViewSwitcher
+          onViewModeChange={(viewMode: ViewMode) => setView(viewMode)}
+          onViewListChange={setIsChecked}
+          isChecked={isChecked}
+        />
+        <RecentOrders />
+        <Button> Сохранить в PDF </Button>
       </div>
-      <div className=" w-full md:col-span-12 relative lg:h-[70vh] h-[50vh] m-auto p-4 border rounded-lg bg-white">
-      <Gantt 
-        tasks={tasks}
-        viewMode={view}
-        onDateChange={handleTaskChange}
-        onDelete={handleTaskDelete}
-        onProgressChange={handleProgressChange}
-        onDoubleClick={handleDblClick}
-        onSelect={handleSelect}
-        onExpanderClick={handleExpanderClick}
-        listCellWidth={isChecked ? "155px" : ""}
-        columnWidth={columnWidth}
-        rowHeight={rowHeight}
-        locale="ru"
-        
-        
-      />
-      
-    </div>
+
+      <div  className="flex flex-row items-start w-full md:col-span-12 relative lg:h-[70vh] h-[60vh] m-auto p-4 border rounded-lg bg-white overflow-x-auto">
+      {/* <div>
+          <ul>
+            <li className="m-4">0</li>
+            <li className="m-4">K1</li>
+            <li className="m-4">K2</li>
+            <li className="m-4">K3</li>
+            <li className="m-4">K4</li>
+            <li className="m-4">K5</li>
+          </ul>
+        </div> */}
+        <Gantt 
+          tasks={tasks}
+          viewMode={view}
+          onDateChange={handleTaskChange}
+          onDelete={handleTaskDelete}
+          onProgressChange={handleProgressChange}
+          onDoubleClick={handleDblClick}
+          onSelect={handleSelect}
+          onExpanderClick={handleExpanderClick}
+          listCellWidth={isChecked ? "155px" : ""}
+          columnWidth={columnWidth}
+          rowHeight={rowHeight}
+          locale="ru"
+          
+        />
+      </div>
     </>
   );
 }
