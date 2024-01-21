@@ -32,7 +32,7 @@ export const initTasks = (data: any) => {
       // ),
       start: new Date(K1_startYear,K1_startMonth, K1_startDay),
       end: new Date(K1_endYear, K1_endMonth, K1_endDay ),
-      name: "K1",
+      name: data?.tasks[0].duedate,
       id: "Task 0",
       progress: 100,
       type: "task",
@@ -49,7 +49,7 @@ export const initTasks = (data: any) => {
       // dependencies: ["Task 0"],
       type: "task",
       project: "ProjectSample",
-      // styles: { progressColor: '#ffbb54', progressSelectedColor: '#ff9e0d' }
+      styles: { progressColor: '#ffbb54', progressSelectedColor: '#ff9e0d' }
 
     },
     {

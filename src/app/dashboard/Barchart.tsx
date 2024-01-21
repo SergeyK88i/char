@@ -19,7 +19,7 @@ export default function App({data}:Props) {
 
   const [isChecked, setIsChecked] = useState(false);
   let columnWidth = 60;
-
+  
   let rowHeight = 35;
   if (view === ViewMode.Month) {
     columnWidth = 150;
@@ -90,14 +90,20 @@ export default function App({data}:Props) {
       <div  className="flex flex-row items-start w-full md:col-span-12 relative lg:h-[60vh] h-[60vh] m-auto p-4 border rounded-lg bg-white overflow-auto">
       <div>
           <ul>
-            <li className="m-4">0</li>
-            <li className="m-4">K1</li>
-            <li className="m-4">K2</li>
-            <li className="m-4">K3</li>
-            <li className="m-4">K4</li>
-            <li className="m-4">K5</li>
+            <li className=" h-[50px] pb-1 pr-5 m-0 flex justify-end items-end" > </li>
+            <li className="m-0 pr-5 h-[35px] flex justify-end items-center">K1</li>
+            <li className="m-0 pr-5  h-[35px] flex justify-end items-center">K2</li>
+            <li className="m-0 pr-5  h-[35px] flex justify-end items-center">K3</li>
+            <li className="m-0 pr-5  h-[35px] flex justify-end items-center">K4</li>
+            <li className="m-0 pr-5  h-[35px] flex justify-end items-center">K5</li>
+            <li className="m-0 pr-5  h-[35px] flex justify-end items-center">K6</li>
+            <li className="m-0 pr-5  h-[35px] flex justify-end items-center">K7</li>
+            <li className="m-0 pr-5  h-[35px] flex justify-end items-center">РОВ</li>
+            <li className="m-0 pr-5  h-[35px] flex justify-end items-center w-[120px] text-right">initLoad-TKK</li>
+            <li className="m-0 pr-5  h-[35px] flex justify-end items-center">Старт ОЭ</li>
+            <li className="m-0 pr-5  h-[35px] flex justify-end items-center">Старт ПЭ</li>
           </ul>
-        </div>
+      </div>
         <Gantt 
           tasks={tasks}
           viewMode={view}
@@ -111,6 +117,7 @@ export default function App({data}:Props) {
           columnWidth={columnWidth}
           rowHeight={rowHeight}
           locale="ru"
+          
           
         />
       </div>

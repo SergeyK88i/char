@@ -120,14 +120,14 @@ const handle_1 = () => {
 }
 const handle_2 = () => {
     handleFilterStatus("");
-    handleFilterBlock("RB");
+    handleFilterBlock("РБ");
 }
 const handle_3 = () => {
     handleFilterStatus("");
-    handleFilterBlock("KIB");
+    handleFilterBlock("КИБ");
 }
   return (
-<div className="p-5" ref={pdfRef}>
+<div className="p-5 bg-white" ref={pdfRef} >
   
 <>
 <div className="row text-center mt-5">

@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import myData from '@/app/data/source.json'
 import Barchart from '../Barchart';
 import RecentOrders from '../RecentOrders';
@@ -6,7 +6,7 @@ import React, { useRef } from "react"
 import Link from "next/link"
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import { getId } from '../DownloadData';
+import { getById } from '../DownloadData';
 // https://my-json-server.typicode.com/SergeyK88i/testDB/source
 // async function getData(id: string) {
 //     const response = await fetch(`https://my-json-server.typicode.com/SergeyK88i/testDB/source/${id}`, {
@@ -25,30 +25,32 @@ type Props = {
 
 
 export default async function TopDashboard({params: {id} }: Props){
-    const pdfRef = useRef();
-  const downloadPDF = () => {
-    const input = pdfRef.current;
-    html2canvas(input).then((canvas) => {
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF('l','mm','a4', true);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = pdf.internal.pageSize.getHeight();
-      const imgWidth = canvas.width;
-      const imgHeight = canvas.height;
-      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-      const imgX = (pdfWidth - imgWidth * ratio) / 2;
-      const imgY = 10;
-      pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
+//     const pdfRef = useRef();
+
+//   const downloadPDF = () => {
+//     const input = pdfRef.current;
+//     html2canvas(input).then((canvas) => {
+//       const imgData = canvas.toDataURL('image/png');
+//       const pdf = new jsPDF('l','mm','a4', true);
+//       const pdfWidth = pdf.internal.pageSize.getWidth();
+//       const pdfHeight = pdf.internal.pageSize.getHeight();
+//       const imgWidth = canvas.width;
+//       const imgHeight = canvas.height;
+//       const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+//       const imgX = (pdfWidth - imgWidth * ratio) / 2;
+//       const imgY = 10;
+//       pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
       
-      pdf.save('table.pdf');
-    })
-  }
+//       pdf.save('table.pdf');
+//     })
+//   }
     // const post = await getData(id)
-    const post = await getId(id);
+    const post = await getById(id);
     console.log(post)
     return (
-        // <div>
-        <div className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400" ref={pdfRef}>
+        // <div className='App'>
+        // <div ref={pdfRef}>
+        <div className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400" >
             <div className="grid lg:grid-cols-10 p-4 gap-2">
                 <div className="lg:col-span-3 col-span-1 flex justify-between w-full bg-white  border p-4 rounded-lg">
                     <div className="flex flex-col w-full">
@@ -63,7 +65,7 @@ export default async function TopDashboard({params: {id} }: Props){
                 </div>
                 <div className="lg:col-span-2 col-span-1 flex justify-between w-full bg-white  border p-4 rounded-lg">
                 <div className="row text-center mt-5">
-                    <button className="btn btn-primary" onClick={downloadPDF}>Download PDF</button>
+                    {/* <button className="btn btn-primary" onClick={downloadPDF}>Download PDF</button> */}
                 </div>
                 </div>
                 <div className="lg:col-span-2 col-span-1 flex justify-between w-full bg-white border p-4 rounded-lg">

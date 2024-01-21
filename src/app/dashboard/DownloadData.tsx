@@ -5,7 +5,7 @@ export const getAllData = async() => {
     return response.json();
 };
 
-export const getId = async (id: string) => {
+export const getById = async (id: string) => {
     const response = await fetch(`https://my-json-server.typicode.com/SergeyK88i/testDB/source/${id}`, {
         next: {
             revalidate: 5

@@ -61,16 +61,16 @@ const Select =({posts}: Props) => {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[700px] justify-between"
+          className="w-[500px] justify-center"
           style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
         >
           {value
             ? posts.find((framework) => framework.name.toLowerCase() === value.toLowerCase())?.label
-            : "Список источников"}
+            : "Найти источник"}
           {/* <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" /> */}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[800px] p-0">
+      <PopoverContent className="w-[500px] p-0">
         <Command>
           <CommandInput placeholder="Введите имя источника" className="h-9" />
           <CommandEmpty>Источник не найден</CommandEmpty>
