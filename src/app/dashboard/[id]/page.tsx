@@ -1,4 +1,4 @@
-// "use client"
+"use client"
 import myData from '@/app/data/source.json'
 import Barchart from '../Barchart';
 import RecentOrders from '../RecentOrders';
@@ -50,7 +50,7 @@ export default async function TopDashboard({params: {id} }: Props){
     return (
         // <div className='App'>
         // <div ref={pdfRef}>
-        <div className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400" >
+         <div className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 " >
             <div className="grid lg:grid-cols-10 p-4 gap-2">
                 <div className="lg:col-span-3 col-span-1 flex justify-between w-full bg-white  border p-4 rounded-lg">
                     <div className="flex flex-col w-full">
@@ -64,9 +64,9 @@ export default async function TopDashboard({params: {id} }: Props){
                     </div>
                 </div>
                 <div className="lg:col-span-2 col-span-1 flex justify-between w-full bg-white  border p-4 rounded-lg">
-                <div className="row text-center mt-5">
-                    {/* <button className="btn btn-primary" onClick={downloadPDF}>Download PDF</button> */}
-                </div>
+                {/* <div className="row text-center mt-5">
+                    <button className="btn btn-primary" onClick={downloadPDF}>Download PDF</button>
+                </div> */}
                 </div>
                 <div className="lg:col-span-2 col-span-1 flex justify-between w-full bg-white border p-4 rounded-lg">
                     <ul className="text-left w-full ">

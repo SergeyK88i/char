@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getAllData } from "./DownloadData";
 import { Posts } from '@/app/components/Posts';
 import { Select } from "../components/Select";
+import { Skeleton } from "@/components/ui/skeleton"
 
 
 
@@ -17,7 +18,9 @@ export default function RecentOrders() {
        <div>
             
             {loading ? (
-                <h3>Loading... </h3> 
+                // <h3>Loading... </h3>
+                <Skeleton className="w-[500px] h-[40px] rounded-lg" />
+                
             ) : (
                 // <Posts posts={posts} />
                 <Select posts={posts}/>

@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/popover"
 import Link from "next/link"
 import { AiOutlineCheck } from "react-icons/ai";
-
+import { CiSearch } from "react-icons/ci";
 // const frameworks = [
 //     {
 //         "id": 1,
@@ -52,22 +52,26 @@ type Props = {
 const Select =({posts}: Props) => {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
-
+  
   return (
     <Popover open={open} onOpenChange={setOpen}>
+      
       <PopoverTrigger asChild>
-        
+      
         <Button
+        
           variant="outline"
           role="combobox"
           aria-expanded={open}
           className="w-[500px] justify-center"
           style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
         >
+          {/* <CiSearch /> */}
           {value
             ? posts.find((framework) => framework.name.toLowerCase() === value.toLowerCase())?.label
             : "Найти источник"}
           {/* <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" /> */}
+          
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[500px] p-0">
