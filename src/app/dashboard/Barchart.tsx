@@ -1,4 +1,4 @@
-// 'use client'
+'use client'
 // import "./globals.css";
 // import React from 'react';
 import { Gantt, Task, ViewMode } from "gantt-task-react";
@@ -7,13 +7,15 @@ import { initTasks, getStartEndDateForProject } from "@/app/data/data";
 import { ViewSwitcher } from "@/app/dashboard/ViewSwitcher";
 import RecentOrders from "./RecentOrders";
 import { Button } from "@/components/ui/button";
-
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 type Props = {
   data: any[]
+  downloadPDF: ()=>void;
 }
 
-export default function App({data}:Props) {
+export default function App({data,downloadPDF}:Props, ) {
   const [view, setView] = useState<ViewMode>(ViewMode.Month);
   const [tasks, setTasks] = useState<Task[]>(initTasks(data));
 
@@ -75,7 +77,7 @@ export default function App({data}:Props) {
 
   return (
     <>
-      <div className=" flex flex-row items-center w-full md:col-span-12 relative lg:h-[8vh] h-[8vh] m-auto p-4 border rounded-lg bg-white">
+      <div className=" flex flex-row items-center  w-full md:col-span-12 relative lg:h-[6vh] h-[6vh] m-auto p-4 border rounded-lg bg-white">
         
         <ViewSwitcher
           onViewModeChange={(viewMode: ViewMode) => setView(viewMode)}
@@ -83,13 +85,13 @@ export default function App({data}:Props) {
           isChecked={isChecked}
         />
         <RecentOrders />
-        <Button> Сохранить в PDF </Button>
+        <Button onClick={downloadPDF} className="ml-2 bg-gradient-to-r from-emerald-500 to-lime-600 "> Сохранить в PDF </Button>
         
       </div>
 
-      <div  className="flex flex-row items-start w-full md:col-span-12 relative lg:h-[60vh] h-[60vh] m-auto p-4 border rounded-lg bg-white overflow-auto">
+      <div  className="flex flex-row items-start w-full md:col-span-12 relative lg:h-[60vh] h-[60vh] m-auto p-4 pt-0 border rounded-lg bg-white overflow-auto">
       <div>
-          <ul>
+          <ul className="font-bold">
             <li className=" h-[50px] pb-1 pr-5 m-0 flex justify-end items-end" > </li>
             <li className="m-0 pr-5 h-[35px] flex justify-end items-center">K1</li>
             <li className="m-0 pr-5  h-[35px] flex justify-end items-center">K2</li>
@@ -99,7 +101,7 @@ export default function App({data}:Props) {
             <li className="m-0 pr-5  h-[35px] flex justify-end items-center">K6</li>
             <li className="m-0 pr-5  h-[35px] flex justify-end items-center">K7</li>
             <li className="m-0 pr-5  h-[35px] flex justify-end items-center">РОВ</li>
-            <li className="m-0 pr-5  h-[35px] flex justify-end items-center w-[120px] text-right">initLoad-TKK</li>
+            <li className="m-0 pr-5  h-[35px] flex justify-end items-center w-[125px] text-right">initLoad-TKK</li>
             <li className="m-0 pr-5  h-[35px] flex justify-end items-center">Старт ОЭ</li>
             <li className="m-0 pr-5  h-[35px] flex justify-end items-center">Старт ПЭ</li>
           </ul>
@@ -117,7 +119,7 @@ export default function App({data}:Props) {
           columnWidth={columnWidth}
           rowHeight={rowHeight}
           locale="ru"
-          
+          barFill={80} //определяем высоту прогресс
           
         />
       </div>

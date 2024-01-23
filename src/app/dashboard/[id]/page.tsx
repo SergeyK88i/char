@@ -25,42 +25,43 @@ type Props = {
 
 
 export default async function TopDashboard({params: {id} }: Props){
-//     const pdfRef = useRef();
+    // const pdfRef = useRef();
 
-//   const downloadPDF = () => {
+  const downloadPDF = () => {
 //     const input = pdfRef.current;
-//     html2canvas(input).then((canvas) => {
-//       const imgData = canvas.toDataURL('image/png');
-//       const pdf = new jsPDF('l','mm','a4', true);
-//       const pdfWidth = pdf.internal.pageSize.getWidth();
-//       const pdfHeight = pdf.internal.pageSize.getHeight();
-//       const imgWidth = canvas.width;
-//       const imgHeight = canvas.height;
-//       const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-//       const imgX = (pdfWidth - imgWidth * ratio) / 2;
-//       const imgY = 10;
-//       pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
+    const input = document.getElementById("topDashboard");
+    html2canvas(input).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('l','mm','a4', true);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const imgWidth = canvas.width;
+      const imgHeight = canvas.height;
+      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+      const imgX = (pdfWidth - imgWidth * ratio) / 2;
+      const imgY = 10;
+      pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
       
-//       pdf.save('table.pdf');
-//     })
-//   }
+      pdf.save('table.pdf');
+    })
+  }
     // const post = await getData(id)
     const post = await getById(id);
     console.log(post)
     return (
-        // <div className='App'>
-        // <div ref={pdfRef}>
-         <div className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 " >
-            <div className="grid lg:grid-cols-10 p-4 gap-2">
+        <div id="topDashboard">
+        {/* <div ref={pdfRef}> */}
+        {/* <div className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400"> */}
+            <div className="grid lg:grid-cols-10 p-4 gap-2 pb-0">
                 <div className="lg:col-span-3 col-span-1 flex justify-between w-full bg-white  border p-4 rounded-lg">
                     <div className="flex flex-col w-full">
-                        {/* <h2>Блок: КИБ </h2> */}
+                        <h2><span className="font-bold">Блок:</span> {post?.corporate_unit} </h2>
                         
-                        <h1 className="my-5 text-green-600 font-bold">Источник: {post?.name}</h1>
+                        <h1 className="my-5 "> <span className="font-bold">Источник:</span> {post?.name}</h1>
                         {/* {post?.tasks[0].duedate} */}
-                        <p>КЭ: {post.ci}</p>
-                        <p className='text-green-500'>Отв. от ДИТ: {post.ci}</p>
-                        <p>Отв. от SD: Солнцев А. В.</p>
+                        <p><span className="font-bold">КЭ:</span> {post.ci}</p>
+                        <p><span className="font-bold">Отв. от ДИТ:</span> {post?.assignee_displayName_DIT}</p>
+                        <p><span className="font-bold">Отв. от SD:</span> {post?.assignee_displayName_CAP} </p>
                     </div>
                 </div>
                 <div className="lg:col-span-2 col-span-1 flex justify-between w-full bg-white  border p-4 rounded-lg">
@@ -70,9 +71,9 @@ export default async function TopDashboard({params: {id} }: Props){
                 </div>
                 <div className="lg:col-span-2 col-span-1 flex justify-between w-full bg-white border p-4 rounded-lg">
                     <ul className="text-left w-full ">
-                    <li>Сроки:</li>
-                    <li className="my-7">Общий сдвиг</li>
-                    <li>Текущий сдвиг</li>
+                    <li><span className="font-bold">Сроки:</span></li>
+                    <li className="my-7">Общий сдвиг : <span className="font-bold text-red-500">{post?.days_shift_all} дн.</span></li>
+                    <li>Текущий сдвиг : <span className="font-bold text-red-500">{post?.days_shift} дн.</span> </li>
                     </ul>
                     
                 </div>
@@ -82,9 +83,9 @@ export default async function TopDashboard({params: {id} }: Props){
                 </div>
                 
             </div>
-            <div className="p-4 grid md:grid-cols-12 grid-cols-1 gap-2">
+            <div className="px-4 pt-2 pb-8 grid md:grid-cols-12 grid-cols-1 gap-2">
                 
-                <Barchart data={post}/>
+                <Barchart downloadPDF={downloadPDF} data={post}/>
                 
                 {/* <RecentOrders /> */}
                 

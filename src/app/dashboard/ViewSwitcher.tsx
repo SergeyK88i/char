@@ -1,6 +1,7 @@
 
 import "gantt-task-react/dist/index.css";
 import { ViewMode } from "gantt-task-react";
+import { Button } from "@/components/ui/button";
 
 type ViewSwitcherProps = {
   isChecked: boolean;
@@ -17,22 +18,22 @@ export const ViewSwitcher: React.SFC<ViewSwitcherProps> = ({
    
   return (
     <div className="ViewContainer" >
-      <button className="Button px-1" 
+      <Button className="Button px-5 bg-gradient-to-r from-violet-300 to-violet-400" 
       onClick={() => onViewModeChange(ViewMode.Day)}>
         День
-      </button>
-      <button
-        className="Button px-1"
+      </Button>
+      <Button
+        className="Button px-5 ml-2 bg-gradient-to-r from-violet-300 to-violet-400"
         onClick={() => onViewModeChange(ViewMode.Week)}
       >
         Неделя
-      </button>
-      <button
-        className="Button px-1"
+        </Button>
+      <Button
+        className="Button px-5 mx-2 bg-gradient-to-r from-violet-300 to-violet-400"
         onClick={() => onViewModeChange(ViewMode.Month)}
       >
         Месяц
-      </button>
+        </Button>
       {/* <div className="Switch">
         <label className="Switch_Toggle">
           <input
