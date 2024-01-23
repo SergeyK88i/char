@@ -18,7 +18,7 @@ export const ViewSwitcher: React.SFC<ViewSwitcherProps> = ({
    
   return (
     <div className="ViewContainer" >
-      <Button className="Button px-5 bg-gradient-to-r from-violet-300 to-violet-400" 
+      <Button className="Button px-5 bg-gradient-to-r from-violet-300 to-violet-400 " 
       onClick={() => onViewModeChange(ViewMode.Day)}>
         День
       </Button>

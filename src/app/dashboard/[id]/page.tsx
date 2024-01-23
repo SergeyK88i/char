@@ -25,10 +25,11 @@ type Props = {
 
 
 export default async function TopDashboard({params: {id} }: Props){
-    // const pdfRef = useRef();
+    // необходимо раскоментировать use client, функцию downloadPDF, добавить в Barchart функцию downloadPDF={downloadPDF}, в компоненте Barchart добавить props downloadPDF и аргумент в компонент barchart, добавить oneClick
+    const pdfRef = useRef();
 
   const downloadPDF = () => {
-//     const input = pdfRef.current;
+    // const input = pdfRef.current;
     const input = document.getElementById("topDashboard");
     html2canvas(input).then((canvas) => {
       const imgData = canvas.toDataURL('image/png');
@@ -48,8 +49,11 @@ export default async function TopDashboard({params: {id} }: Props){
     // const post = await getData(id)
     const post = await getById(id);
     console.log(post)
+
+    const [OE_endYear, OE_endMonth, OE_endDay] = post?.story[2].duedate.split("-")
+    const [OE_startYear, OE_startMonth, OE_startDay] = post?.story[2].planned_end.split("-")
     return (
-        <div id="topDashboard">
+        <div id="topDashboard" className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
         {/* <div ref={pdfRef}> */}
         {/* <div className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400"> */}
             <div className="grid lg:grid-cols-10 p-4 gap-2 pb-0">
@@ -71,9 +75,13 @@ export default async function TopDashboard({params: {id} }: Props){
                 </div>
                 <div className="lg:col-span-2 col-span-1 flex justify-between w-full bg-white border p-4 rounded-lg">
                     <ul className="text-left w-full ">
-                    <li><span className="font-bold">Сроки:</span></li>
+                    <li><span className="font-bold">Сдвиг сроков ОЭ:</span></li>
                     <li className="my-7">Общий сдвиг : <span className="font-bold text-red-500">{post?.days_shift_all} дн.</span></li>
-                    <li>Текущий сдвиг : <span className="font-bold text-red-500">{post?.days_shift} дн.</span> </li>
+                    <p>Текущий сдвиг :  </p>
+                    <p>
+                    {OE_startDay}.{OE_startMonth}.{OE_startYear} -> {OE_endDay}.{OE_endMonth}
+                    <span className="font-bold text-red-500"> (+ {post?.days_shift} дн.) </span>
+                    </p>
                     </ul>
                     
                 </div>
@@ -86,7 +94,7 @@ export default async function TopDashboard({params: {id} }: Props){
             <div className="px-4 pt-2 pb-8 grid md:grid-cols-12 grid-cols-1 gap-2">
                 
                 <Barchart downloadPDF={downloadPDF} data={post}/>
-                
+                {/* <Barchart data={post}/> */}
                 {/* <RecentOrders /> */}
                 
                 

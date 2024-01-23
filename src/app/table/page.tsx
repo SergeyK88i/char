@@ -27,7 +27,7 @@ async function getData(): Promise<Payment[]> {
         id: "4",
         amount: 500,
         statusEpic: "In Progress",
-        name: "Глобальное Инвестиционное Сотрудничество Глобальное Инвестиционное Сотрудничество",
+        name: "Глобальное Инвестиционное Сотрудничество, прямых инвестиция в малый и средный бизнес",
         block: "РБ",
         view_table: "view",
         changeStatus: "PSI"
@@ -57,7 +57,124 @@ async function getData(): Promise<Payment[]> {
         name: "Экспертное Финансовое Консультирование",
         block: "КИБ",
         view_table: "view",
+        changeStatus: "Todo"
+      },
+      {
+        id: "5",
+        amount: 500,
+        statusEpic: "Done",
+        name: "Партнерство Экономического Процветания",
+        block: "РБ",
+        view_table: "view",
+        changeStatus: "PE"
+      },
+      {
+        id: "6",
+        amount: 500,
+        statusEpic: "Done",
+        name: "Глобальные Финансовые Консультанты",
+        block: "РБ",
+        view_table: "view",
+        changeStatus: "PE"
+      },
+      {
+        id: "7",
+        amount: 500,
+        statusEpic: "In Progress",
+        name: "Стратегическое Управление Активами",
+        block: "РБ",
+        view_table: "view",
+        changeStatus: "OE"
+      },
+      {
+        id: "8",
+        amount: 500,
+        statusEpic: "In Progress",
+        name: "Альянс Инвестиционных Решений",
+        block: "РБ",
+        view_table: "view",
+        changeStatus: "PSI"
+      },
+      {
+        id: "9",
+        amount: 500,
+        statusEpic: "In Progress",
+        name: "Кредитные решения ABC",
+        block: "РБ",
+        view_table: "view",
+        changeStatus: "PSI"
+      },
+      {
+        id: "10",
+        amount: 500,
+        statusEpic: "In Progress",
+        name: "Кредитные решения BCD",
+        block: "РБ",
+        view_table: "view",
         changeStatus: "IFT"
+      },
+      {
+        id: "11",
+        amount: 500,
+        statusEpic: "In Progress",
+        name: "Бесплатный сыр",
+        block: "РБ",
+        view_table: "view",
+        changeStatus: "IFT"
+      },
+      {
+        id: "12",
+        amount: 500,
+        statusEpic: "Todo",
+        name: "Global Wealth Consultants",
+        block: "РБ",
+        view_table: "view",
+        changeStatus: "Todo"
+      },
+      {
+        id: "13",
+        amount: 500,
+        statusEpic: "Todo",
+        name: "Smart Financial Strategies",
+        block: "РБ",
+        view_table: "view",
+        changeStatus: "Todo"
+      },
+      {
+        id: "14",
+        amount: 500,
+        statusEpic: "In Progress",
+        name: "Profit Maximizers Alliance",
+        block: "РБ",
+        view_table: "view",
+        changeStatus: "IFT"
+      },
+      {
+        id: "15",
+        amount: 500,
+        statusEpic: "In Progress",
+        name: "Инвестиционная Мастерская",
+        block: "РБ",
+        view_table: "view",
+        changeStatus: "IFT"
+      },
+      {
+        id: "16",
+        amount: 500,
+        statusEpic: "In Progress",
+        name: "Инвестиционная стратегия",
+        block: "РБ",
+        view_table: "view",
+        changeStatus: "IFT"
+      },
+      {
+        id: "17",
+        amount: 500,
+        statusEpic: "In Progress",
+        name: "Глобальное Инвестиционное Сотрудничество",
+        block: "РБ",
+        view_table: "view",
+        changeStatus: "PSI"
       },
     // ...
   ]

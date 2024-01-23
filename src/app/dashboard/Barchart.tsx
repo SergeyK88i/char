@@ -16,6 +16,7 @@ type Props = {
 }
 
 export default function App({data,downloadPDF}:Props, ) {
+  // export default function App({data}:Props, ) {
   const [view, setView] = useState<ViewMode>(ViewMode.Month);
   const [tasks, setTasks] = useState<Task[]>(initTasks(data));
 
@@ -24,7 +25,7 @@ export default function App({data,downloadPDF}:Props, ) {
   
   let rowHeight = 35;
   if (view === ViewMode.Month) {
-    columnWidth = 150;
+    columnWidth = 200;
   } else if (view === ViewMode.Week) {
     columnWidth = 250;
   }
@@ -85,8 +86,8 @@ export default function App({data,downloadPDF}:Props, ) {
           isChecked={isChecked}
         />
         <RecentOrders />
+        {/* <Button className="ml-2 bg-gradient-to-r from-emerald-500 to-lime-600 "> Сохранить в PDF </Button> */}
         <Button onClick={downloadPDF} className="ml-2 bg-gradient-to-r from-emerald-500 to-lime-600 "> Сохранить в PDF </Button>
-        
       </div>
 
       <div  className="flex flex-row items-start w-full md:col-span-12 relative lg:h-[60vh] h-[60vh] m-auto p-4 pt-0 border rounded-lg bg-white overflow-auto">
@@ -120,7 +121,8 @@ export default function App({data,downloadPDF}:Props, ) {
           rowHeight={rowHeight}
           locale="ru"
           barFill={80} //определяем высоту прогресс
-          
+          // arrowIndent={1000} сдвиг вправо значение 'name'
+          // todayColor цвет текущего столбца
         />
       </div>
     </>

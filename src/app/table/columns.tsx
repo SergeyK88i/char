@@ -24,7 +24,7 @@ export type Payment = {
   name: string
   block: string
   view_table: string
-  changeStatus: "IFT" | "PSI" | "Init TKK load" 
+  changeStatus: "IFT" | "PSI" | "Init TKK load" | "OE" | "PE" | "Todo"
 }
 
 export const columns: ColumnDef<Payment>[] = [
@@ -43,7 +43,7 @@ export const columns: ColumnDef<Payment>[] = [
             aria-label="Select all"
             
           />
-          <p className="px-4">ALL</p>
+          {/* <p className="px-4">ALL</p> */}
           </div>
         ),
         cell: ({ row }) => (
@@ -127,7 +127,7 @@ export const columns: ColumnDef<Payment>[] = [
               variant="ghost"
               onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
             >
-              Статус Источника
+              Текущий статус
               <ArrowUpDown className="ml-2 h-4 w-4" />
             </Button>
           )

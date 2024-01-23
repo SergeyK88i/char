@@ -127,20 +127,38 @@ const handle_3 = () => {
     handleFilterBlock("КИБ");
 }
   return (
-<div className="p-5 bg-white" ref={pdfRef} >
+<div className="p-5 pt-2 bg-white border rounded-lg" ref={pdfRef} >
   
+  <div className="flex space-x-1 pb-2">
 <>
-<div className="row text-center mt-5">
+{/* <div className="row text-center mt-5">
     <button className="btn btn-primary" onClick={downloadPDF}>Download PDF</button>
-</div>
-<Button onClick={() => handle_1()} className="bg-blue-400 hover:bg-blue-500" >Status</Button>
-<Button onClick={() => handle_2()} className="mx-1 bg-blue-400 hover:bg-blue-500">РБ</Button>
-{/* <input type="checkbox" onChange={() => handle_2()} className="mx-1 bg-blue-400 hover:bg-blue-500" /> */}
-<Button onClick={() => handle_3()} className="bg-blue-400 hover:bg-blue-500">КИБ</Button>
-{/* <Button onClick={() => handleFilterBlock("KIB")} className="bg-blue-400 hover:bg-blue-500">КИБ</Button> */}
-<Button onClick={() => handleResetFilters()} className="mx-1 bg-blue-400 hover:bg-blue-500">Все</Button>
+</div> */}
+
 
 </>
+
+
+{/* <div className="flex items-center py-4"> */}
+            
+{/* </div> */}
+
+<Button onClick={() => handle_1()} className="bg-gradient-to-r from-violet-300 to-violet-400" >Status</Button>
+<Button onClick={() => handle_2()} className="mx-1 bg-gradient-to-r from-violet-300 to-violet-400">РБ</Button>
+{/* <input type="checkbox" onChange={() => handle_2()} className="mx-1 bg-blue-400 hover:bg-blue-500" /> */}
+<Button onClick={() => handle_3()} className="bg-gradient-to-r from-violet-300 to-violet-400">КИБ</Button>
+{/* <Button onClick={() => handleFilterBlock("KIB")} className="bg-blue-400 hover:bg-blue-500">КИБ</Button> */}
+<Button onClick={() => handleResetFilters()} className="mx-1 bg-gradient-to-r from-violet-300 to-violet-400">Все</Button>
+
+<Input
+              placeholder="Поиск по наименованию источника"
+              value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
+              onChange={(event) =>
+                table.getColumn("name")?.setFilterValue(event.target.value)
+              }
+              className="max-w-sm px-4 py-0"
+            />
+
 <DropdownMenu >
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
@@ -169,16 +187,9 @@ const handle_3 = () => {
               })}
           </DropdownMenuContent>
 </DropdownMenu>
-<div className="flex items-center py-4">
-        <Input
-          placeholder="Filter name..."
-          value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("name")?.setFilterValue(event.target.value)
-          }
-          className="max-w-sm px-4 py-0"
-        />
-</div>
+
+
+</div>    
     <div className="rounded-md border">
       <Table>
         <TableHeader>
@@ -229,22 +240,22 @@ const handle_3 = () => {
       </Table>
     </div>
     <div className="flex items-center justify-end space-x-2 py-4">
-    {/* <Button
+    <Button
       variant="outline"
       size="sm"
       onClick={() => table.previousPage()}
       disabled={!table.getCanPreviousPage()}
     >
       Previous
-    </Button> */}
-    {/* <Button
+    </Button>
+    <Button
       variant="outline"
       size="sm"
       onClick={() => table.nextPage()}
       disabled={!table.getCanNextPage()}
     >
       Next
-    </Button> */}
+    </Button>
   </div>
 </div>
   )
