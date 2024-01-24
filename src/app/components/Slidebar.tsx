@@ -6,6 +6,7 @@ import { ImBarcode } from "react-icons/im";
 import { ImDatabase } from "react-icons/im";
 import { GrMonitor } from "react-icons/gr";
 import { TfiHome } from "react-icons/tfi";
+import { CiViewTable } from "react-icons/ci";
 
 
 
@@ -32,7 +33,8 @@ export default function Slidebar ({children}: any) {
                     <Link href="/table">
                         <div className="bg-purple-800 hover:bg-green-700 text-white p-3 my-2 rounded-lg inline-block">
                             
-                            <ImDatabase size={20}/>
+                            {/* <ImDatabase size={20}/> */}
+                            <CiViewTable size={20} />
                         </div>    
                     </Link>
                 </div>

@@ -34,6 +34,7 @@ import React, { useRef } from "react"
 import Link from "next/link"
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { downloadToExcel } from "../dashboard/DownloadXLSX"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -159,6 +160,10 @@ const handle_3 = () => {
               className="max-w-sm px-4 py-0"
             />
 
+<Button onClick={()=>downloadToExcel()} className="bg-gradient-to-r from-emerald-500 to-lime-600 ">
+  Экспорт в эксель
+</Button>
+
 <DropdownMenu >
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
@@ -246,7 +251,7 @@ const handle_3 = () => {
       onClick={() => table.previousPage()}
       disabled={!table.getCanPreviousPage()}
     >
-      Previous
+      Назад
     </Button>
     <Button
       variant="outline"
@@ -254,7 +259,7 @@ const handle_3 = () => {
       onClick={() => table.nextPage()}
       disabled={!table.getCanNextPage()}
     >
-      Next
+      Вперед
     </Button>
   </div>
 </div>

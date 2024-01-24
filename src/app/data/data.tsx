@@ -1,6 +1,6 @@
 
 import { Task } from "gantt-task-react";
-
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 
 export const initTasks = (data: any) => {
@@ -39,12 +39,22 @@ export const initTasks = (data: any) => {
   const [PE_endYear, PE_endMonth, PE_endDay] = data?.story[3].duedate.split("-")
 
 
-  
+  const [p1, p2, p3] = data?.tasks[0].planned_end.split("-");
+  const [p4, p5, p6] = data?.tasks[0].duedate.split("-");
   const v1 = data?.tasks[0].planned_end;
   const v2 = data?.tasks[0].duedate;
   
-  const combinedString = `${v1 ?? ""} -> ${v2 ?? ""}`;
-
+  const K1_combinedString = `${K1_startDay ?? ""}.${K1_startMonth ?? ""} -> ${K1_endDay ?? ""}.${K1_endMonth ?? ""}`;
+  const K2_combinedString = `${K2_startDay ?? ""}.${K2_startMonth ?? ""} -> ${K2_endDay ?? ""}.${K2_endMonth ?? ""}`;
+  const K3_combinedString = `${K3_startDay ?? ""}.${K3_startMonth ?? ""} -> ${K3_endDay ?? ""}.${K3_endMonth ?? ""}`;
+  const K4_combinedString = `${K4_startDay ?? ""}.${K4_startMonth ?? ""} -> ${K4_endDay ?? ""}.${K4_endMonth ?? ""}`;
+  const K5_combinedString = `${K5_startDay ?? ""}.${K5_startMonth ?? ""} -> ${K5_endDay ?? ""}.${K5_endMonth ?? ""}`;
+  const K6_combinedString = `${K6_startDay ?? ""}.${K6_startMonth ?? ""} -> ${K6_endDay ?? ""}.${K6_endMonth ?? ""}`;
+  const K7_combinedString = `${K7_startDay ?? ""}.${K7_startMonth ?? ""} -> ${K7_endDay ?? ""}.${K7_endMonth ?? ""}`;
+  const ROV_combinedString = `${ROV_startDay ?? ""} -> ${ROV_endDay ?? ""}.${ROV_endMonth ?? ""}`;
+  const InitLoad_combinedString = `${InitLoad_startDay ?? ""}.${InitLoad_startMonth ?? ""} -> ${InitLoad_endDay ?? ""}.${InitLoad_endMonth ?? ""}`;
+  const OE_combinedString = `${OE_startDay ?? ""}.${OE_startMonth ?? ""} -> ${OE_endDay ?? ""}.${OE_endMonth ?? ""}`;
+  const PE_combinedString = `${PE_startDay ?? ""}.${PE_startMonth ?? ""} -> ${PE_endDay ?? ""}.${PE_endMonth ?? ""}`;
   const tasks: Task[] = [
     // {
     //   start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
@@ -68,24 +78,25 @@ export const initTasks = (data: any) => {
       start: new Date(K1_startYear,K1_startMonth - 1, K1_startDay),
       end: new Date(K1_endYear, K1_endMonth - 1, K1_endDay ),
       // name: data?.tasks[0].duedate,
-      name: combinedString,
+      name: K1_combinedString,
       id: "Task 0",
       progress: 100,
       type: "task",
-      project: "ProjectSample"
+      // project: "ProjectSample",
+      styles: { progressColor: '#138808', progressSelectedColor: '#138808' }
     },
     {
       // start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 2),
       // end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 4, 0, 0),
       start: new Date(K2_startYear,K2_startMonth - 1, K2_startDay),
       end: new Date(K2_endYear, K2_endMonth - 1, K2_endDay ),
-      name: "K2",
+      name: K2_combinedString,
       id: "Task 1",
       progress: 100,
       // dependencies: ["Task 0"],
       type: "task",
-      project: "ProjectSample",
-      styles: { progressColor: '#ffbb54', progressSelectedColor: '#ff9e0d' }
+      // project: "ProjectSample",
+      styles: { progressColor: '#138808', progressSelectedColor: '#138808' }
 
     },
     {
@@ -93,24 +104,26 @@ export const initTasks = (data: any) => {
       // end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 8, 0, 0),
       start: new Date(K3_startYear,K3_startMonth - 1, K3_startDay),
       end: new Date(K3_endYear, K3_endMonth - 1, K3_endDay ),
-      name: "K3",
+      name: K3_combinedString,
       id: "Task 2",
       progress: 100,
       // dependencies: ["Task 1"],
       type: "task",
-      project: "ProjectSample"
+      // project: "ProjectSample",
+      styles: { progressColor: '#138808', progressSelectedColor: '#138808' }
     },
     {
       // start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 8),
       // end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 11, 0, 0),
       start: new Date(K4_startYear,K4_startMonth - 1, K4_startDay),
       end: new Date(K4_endYear, K4_endMonth - 1, K4_endDay ),
-      name: "К4",
+      name: K4_combinedString,
       id: "Task 3",
       progress: 100,
       // dependencies: ["Task 2"],
       type: "task",
-      project: "ProjectSample"
+      // project: "ProjectSample",
+      styles: { progressColor: '#ff9d07', progressSelectedColor: '#ff9d07' }
     },
     // {
     //   start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 8),
@@ -149,7 +162,7 @@ export const initTasks = (data: any) => {
       end: new Date(K5_endYear, K5_endMonth - 1, K5_endDay ),
       // start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 4),
       // end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 5),
-      name: "К5",
+      name: K5_combinedString,
       id: "Task 10",
       progress: 100,
       // isDisabled: true,
@@ -169,7 +182,7 @@ export const initTasks = (data: any) => {
     {
       start: new Date(K6_startYear,K6_startMonth - 1, K6_startDay),
       end: new Date(K6_endYear, K6_endMonth - 1, K6_endDay ),
-      name: "К6",
+      name: K6_combinedString,
       id: "Task 12",
       progress: 100,
       
@@ -179,7 +192,7 @@ export const initTasks = (data: any) => {
     {
       start: new Date(K7_startYear,K7_startMonth - 1, K7_startDay),
       end: new Date(K7_endYear, K7_endMonth - 1, K7_endDay ),
-      name: "К7",
+      name: K7_combinedString,
       id: "Task 14",
       progress: 100,
       
@@ -189,7 +202,7 @@ export const initTasks = (data: any) => {
     {
       start: new Date(ROV_startYear,ROV_startMonth - 1, ROV_startDay),
       end: new Date(ROV_endYear, ROV_endMonth - 1, ROV_endDay ),
-      name: "РоВ",
+      name: ROV_combinedString,
       id: "Task 15",
       progress: 100,
       // isDisabled: true,
@@ -199,7 +212,7 @@ export const initTasks = (data: any) => {
     {
       start: new Date(InitLoad_startYear,InitLoad_startMonth - 1, InitLoad_startDay),
       end: new Date(InitLoad_endYear, InitLoad_endMonth - 1, InitLoad_endDay ),
-      name: "InitLoad-TTK",
+      name: InitLoad_combinedString,
       id: "Task 16",
       progress: 100,
       // isDisabled: true,
@@ -209,12 +222,13 @@ export const initTasks = (data: any) => {
     {
       start: new Date(OE_startYear,OE_startMonth - 1, OE_startDay),
       end: new Date(OE_endYear, OE_endMonth - 1, OE_endDay ),
-      name: "Старт ОЭ",
+      name: OE_combinedString,
       id: "Task 17",
       progress: 100,
       // isDisabled: true,
       type: "task",
       // dependencies: ["Task 16"],
+      styles: { progressColor: '#ff6654', progressSelectedColor: '#ff6654' }
     },
     {
       // start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 14),
@@ -222,13 +236,13 @@ export const initTasks = (data: any) => {
       // start: new Date(2023, 7, 10),
       // end: new Date(2023, 7, 10),
       // end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 16,0,0),
-      start: new Date(PE_endYear, PE_endMonth - 1, PE_endDay ),
+      start: new Date(PE_startYear, PE_startMonth - 1, PE_startDay ),
       end: new Date(PE_endYear, PE_endMonth - 1, PE_endDay ),
-      name: "Старт ПЭ",
+      name: PE_combinedString,
       id: "Task 18",
       progress: 100,
       // isDisabled: true,
-      type: "milestone",
+      type: "task",
       // dependencies: ["Task 17"],
     }
   ];

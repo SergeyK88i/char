@@ -1,7 +1,7 @@
 import { Payment, columns } from "./columns"
 import { DataTable } from "./data-table"
 
-async function getData(): Promise<Payment[]> {
+ export async function getData(): Promise<Payment[]> {
   // Fetch data from your API here.
   return [
     // {
@@ -30,7 +30,8 @@ async function getData(): Promise<Payment[]> {
         name: "Глобальное Инвестиционное Сотрудничество, прямых инвестиция в малый и средный бизнес",
         block: "РБ",
         view_table: "view",
-        changeStatus: "PSI"
+        changeStatus: "PSI",
+        person: "Грибова Вера Матвеевна"
       },
       {
         id: "3",
@@ -39,7 +40,8 @@ async function getData(): Promise<Payment[]> {
         name: "Проактивные Инвестиционные Решения",
         block: "РБ",
         view_table: "view",
-        changeStatus: "Init TKK load"
+        changeStatus: "Init TKK load",
+        person: "Грибова Вера Матвеевна"
       },
       {
         id: "2",
@@ -48,16 +50,18 @@ async function getData(): Promise<Payment[]> {
         name: "Инновационные Финансовые Ресурсы",
         block: "КИБ",
         view_table: "view",
-        changeStatus: "PSI"
+        changeStatus: "PSI",
+        person: "Грибова Вера Матвеевна"
       },
       {
         id: "1",
         amount: 500,
-        statusEpic: "Todo",
+        statusEpic: "In Progress",
         name: "Экспертное Финансовое Консультирование",
         block: "КИБ",
         view_table: "view",
-        changeStatus: "Todo"
+        changeStatus: "OE",
+        person: "Грибова Вера Матвеевна"
       },
       {
         id: "5",
@@ -66,7 +70,8 @@ async function getData(): Promise<Payment[]> {
         name: "Партнерство Экономического Процветания",
         block: "РБ",
         view_table: "view",
-        changeStatus: "PE"
+        changeStatus: "PE",
+        person: "Крылова Марина Ярославовна"
       },
       {
         id: "6",
@@ -75,7 +80,8 @@ async function getData(): Promise<Payment[]> {
         name: "Глобальные Финансовые Консультанты",
         block: "РБ",
         view_table: "view",
-        changeStatus: "PE"
+        changeStatus: "PE",
+        person: "Крылова Марина Ярославовна"
       },
       {
         id: "7",
@@ -84,7 +90,8 @@ async function getData(): Promise<Payment[]> {
         name: "Стратегическое Управление Активами",
         block: "РБ",
         view_table: "view",
-        changeStatus: "OE"
+        changeStatus: "OE",
+        person: "Крылова Марина Ярославовна"
       },
       {
         id: "8",
@@ -93,7 +100,8 @@ async function getData(): Promise<Payment[]> {
         name: "Альянс Инвестиционных Решений",
         block: "РБ",
         view_table: "view",
-        changeStatus: "PSI"
+        changeStatus: "PSI",
+        person: "Крылова Марина Ярославовна"
       },
       {
         id: "9",
@@ -102,7 +110,8 @@ async function getData(): Promise<Payment[]> {
         name: "Кредитные решения ABC",
         block: "РБ",
         view_table: "view",
-        changeStatus: "PSI"
+        changeStatus: "PSI",
+        person: "Крылова Марина Ярославовна"
       },
       {
         id: "10",
@@ -111,7 +120,8 @@ async function getData(): Promise<Payment[]> {
         name: "Кредитные решения BCD",
         block: "РБ",
         view_table: "view",
-        changeStatus: "IFT"
+        changeStatus: "IFT",
+        person: "Крылова Марина Ярославовна"
       },
       {
         id: "11",
@@ -120,7 +130,8 @@ async function getData(): Promise<Payment[]> {
         name: "Бесплатный сыр",
         block: "РБ",
         view_table: "view",
-        changeStatus: "IFT"
+        changeStatus: "IFT",
+        person: "Крылова Марина Ярославовна"
       },
       {
         id: "12",
@@ -129,7 +140,8 @@ async function getData(): Promise<Payment[]> {
         name: "Global Wealth Consultants",
         block: "РБ",
         view_table: "view",
-        changeStatus: "Todo"
+        changeStatus: "Todo",
+        person: ""
       },
       {
         id: "13",
@@ -138,7 +150,8 @@ async function getData(): Promise<Payment[]> {
         name: "Smart Financial Strategies",
         block: "РБ",
         view_table: "view",
-        changeStatus: "Todo"
+        changeStatus: "Todo",
+        person: ""
       },
       {
         id: "14",
@@ -147,7 +160,8 @@ async function getData(): Promise<Payment[]> {
         name: "Profit Maximizers Alliance",
         block: "РБ",
         view_table: "view",
-        changeStatus: "IFT"
+        changeStatus: "IFT",
+        person: "Крылова Марина Ярославовна"
       },
       {
         id: "15",
@@ -156,7 +170,8 @@ async function getData(): Promise<Payment[]> {
         name: "Инвестиционная Мастерская",
         block: "РБ",
         view_table: "view",
-        changeStatus: "IFT"
+        changeStatus: "IFT",
+        person: "Крылова Марина Ярославовна"
       },
       {
         id: "16",
@@ -165,7 +180,8 @@ async function getData(): Promise<Payment[]> {
         name: "Инвестиционная стратегия",
         block: "РБ",
         view_table: "view",
-        changeStatus: "IFT"
+        changeStatus: "IFT",
+        person: "Крылова Марина Ярославовна"
       },
       {
         id: "17",
@@ -174,7 +190,8 @@ async function getData(): Promise<Payment[]> {
         name: "Глобальное Инвестиционное Сотрудничество",
         block: "РБ",
         view_table: "view",
-        changeStatus: "PSI"
+        changeStatus: "PSI",
+        person: "Крылова Марина Ярославовна"
       },
     // ...
   ]
