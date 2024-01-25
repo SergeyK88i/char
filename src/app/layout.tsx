@@ -4,7 +4,8 @@ import './globals.css'
 import Slidebar from './components/Slidebar'
 import Head from 'next/head';
 const inter = Rubik({ subsets: ['latin'] })
-import Trololo from '../app/'
+
+import { Providers } from './components/Providers';
 
 export const metadata: Metadata = {
   title: 'PSIKOD2',
@@ -19,13 +20,15 @@ export default function RootLayout({
   return (
     
     <>
-    <Head>
-      <link rel="icon" href="@/public/Sber_znachek_gree.svg" />
-    </Head>
+    
     <html lang="en">
+      
       <body className={inter.className}>
+      <Providers>
         <Slidebar>{children}</Slidebar>
+        </Providers>
       </body>
+      
     </html>
   </>
   )

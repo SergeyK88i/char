@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 // import {RxSketchLogo} from "react-icons/rx"
@@ -7,11 +8,15 @@ import { ImDatabase } from "react-icons/im";
 import { GrMonitor } from "react-icons/gr";
 import { TfiHome } from "react-icons/tfi";
 import { CiViewTable } from "react-icons/ci";
-
-
-
+import { useSession, signIn, signOut } from "next-auth/react"
+import { FcDecision } from "react-icons/fc";
+import { FcBusinessman } from "react-icons/fc";
+import { CiLogout } from "react-icons/ci";
+import { GrLogin } from "react-icons/gr";
 
 export default function Slidebar ({children}: any) {
+    const session = useSession();
+    console.log(session);
     return (
         <div className="flex">
             <div className="fixed w-20 h-screen p-4 bg-white border-r-[1px] flex flex-col justify-between
@@ -30,16 +35,45 @@ export default function Slidebar ({children}: any) {
                         <GrMonitor size={20}/>
                         </div>    
                     </Link>
-                    <Link href="/table">
+
+                    <div>
+                        {session?.data && (
+                        <Link href="/table">
+                            <div className="bg-purple-800 hover:bg-green-700 text-white p-3 my-2 rounded-lg inline-block">
+                                
+                                {/* <ImDatabase size={20}/> */}
+                                <CiViewTable size={20} />
+                            </div>   
+                        
+                        
+                        </Link>)}
+                    </div>
+
+                    <div >
+                        {session?.data && (
+                            <Link href="/profile">
                         <div className="bg-purple-800 hover:bg-green-700 text-white p-3 my-2 rounded-lg inline-block">
-                            
-                            {/* <ImDatabase size={20}/> */}
-                            <CiViewTable size={20} />
-                        </div>    
-                    </Link>
+                            <FcBusinessman size={20}/>
+                        </div></Link>)}
+                    </div>
+
+                    <div>
+                        <div className="bg-purple-800 hover:bg-green-700 text-white p-3 my-2 rounded-lg inline-block">
+                        {session?.data ? (
+                        <Link href="#" onClick={() => signOut ({
+                            callbackUrl: "/" })}>
+                                <CiLogout />
+                        </Link>
+                        ) : (<Link href="/signin">
+                            {/* <FcDecision size={20}/> */}
+                            <GrLogin size={20}/>
+                        </Link>)}
+                        </div> 
+                    </div>
                 </div>
             </div>
             <main className="ml-20 w-full">{children}</main>
+           
         </div>
     )
 }
