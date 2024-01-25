@@ -1,28 +1,223 @@
- {
+{
     "source": [
         {
             "id": 1,
-            "name": "Земля",
-            "ci": "00000001"
+            "name": "Экспертное Финансовое Консультирование",
+            "ci": "00000001",
+            "label": "Экспертное Финансовое Консультирование",
+            "corporate_unit": "КИБ",
+	    "status": "In Progress",
+	    "days_shift": "4",
+	    "days_shift_all": "15",
+	    "assignee_displayName_DIT": "Гаврилов Григорий Тихонович",
+	    "assignee_displayName_CAP": "Грибова Вера Матвеевна",
+	    "description": "* NEW\r\n *Экспертное Финансовое Консультирование_NEW\r\n * Инсталляция: КБ\r\n *Слой изоляции\r\n * Нагрузка: 833 tps\r\n * Поставка: Типовая\r\n * Команда: Загрузка-2",
+            "tasks": [
+              {
+               "planned_end": "2024-01-10",
+               "duedate": "2024-01-25",
+               "components": "K1"
+              },
+              {
+               "planned_end": "2024-01-10",
+               "duedate": "2024-01-25",
+               "components": "K2"
+              },
+              {
+               "planned_end": "2024-01-10",
+               "duedate": "2024-01-25",
+               "components": "K3"
+              },
+              {
+               "planned_end": "2024-01-25",
+               "duedate": "2024-02-20",
+               "components": "K4"
+              },
+              {
+               "planned_end": "2024-02-20",
+               "duedate": "2024-03-05",
+               "components": "K5"
+              },
+              {
+               "planned_end": "2024-03-05",
+               "duedate": "2024-03-20",
+               "components": "K6"
+              },
+              {
+               "planned_end": "2024-03-05",
+               "duedate": "2024-04-20",
+               "components": "K7"
+              }
+            ],
+            "story": [
+              {
+               "planned_end": "2024-04-10",
+               "duedate": "2024-04-29",
+               "components": "ROV"
+               },
+              {
+               "planned_end": "2024-04-21",
+               "duedate": "2024-05-05",
+               "components": "InitLoad"
+              },
+              {
+               "planned_end": "2024-05-10",
+               "duedate": "2024-05-25",
+               "components": "OE"
+              },
+              {
+               "planned_end": "2024-05-24",
+               "duedate": "2024-06-24",
+               "components": "PE"
+              }
+            ]
 
         },
         {
             "id": 2,
-            "name": "Луна",
-            "ci": "00000002"
+            "name": "Инновационные Финансовые Ресурсы",
+            "ci": "00000002",
+            "label": "Инновационные Финансовые Ресурсы",
+            "corporate_unit": "КИБ",
+            "status": "In Progress",
+	    "days_shift": "5",
+	    "days_shift_all": "7",
+	    "assignee_displayName_DIT": "Рыбаков Богдан Никитич",
+ 	    "assignee_displayName_CAP": "Крылова Марина Ярославовна",
+	    "description": "* NEW\r\n *Инновационные Финансовые Ресурсы_NEW\r\n * Инсталляция: КБ\r\n *Слой изоляции\r\n * Нагрузка: 300 tps\r\n * Поставка: Типовая\r\n * Команда: Загрузка-1",
+            "tasks": [
+              {
+               "planned_end": "2024-01-10",
+               "duedate": "2024-01-25",
+               "components": "K1"
+              },
+              {
+               "planned_end": "2024-01-20",
+               "duedate": "2024-02-25",
+               "components": "K2"
+              },
+              {
+               "planned_end": "2024-02-05",
+               "duedate": "2024-02-25",
+               "components": "K3"
+              },
+              {
+               "planned_end": "2024-02-25",
+               "duedate": "2024-03-10",
+               "components": "K4"
+              },
+              {
+               "planned_end": "2024-03-10",
+               "duedate": "2024-03-25",
+               "components": "K5"
+              },
+              {
+               "planned_end": "2024-03-25",
+               "duedate": "2024-04-20",
+               "components": "K6"
+              },
+              {
+               "planned_end": "2024-04-20",
+               "duedate": "2024-05-20",
+               "components": "K7"
+              }
+            ],
+            "story": [
+              {
+               "planned_end": "2024-05-10",
+               "duedate": "2024-05-25",
+               "components": "ROV"
+               },
+              {
+               "planned_end": "2024-05-25",
+               "duedate": "2024-06-14",
+               "components": "InitLoad"
+              },
+              {
+               "planned_end": "2024-06-14",
+               "duedate": "2024-06-30",
+               "components": "OE"
+              },
+              {
+               "planned_end": "2024-06-30",
+               "duedate": "2024-07-15",
+               "components": "PE"
+              }
+            ]
 
         },
-        {
+	    {
             "id": 3,
-            "name": "Юпитер",
-            "ci": "00000003"
-
-        },
-        {
-            "id": 4,
-            "name": "Солнце",
-            "ci": "00000004"
-
+            "name": "Инновационные",
+            "ci": "00000002",
+            "label": "Инновационные",
+            "corporate_unit": "КИБ",
+            "status": "In Progress",
+	    "days_shift": "5",
+	    "days_shift_all": "7",
+	    "assignee_displayName_DIT": "Рыбаков Богдан Никитич",
+ 	    "assignee_displayName_CAP": "Крылова Марина Ярославовна",
+	    "description": "* NEW\r\n *Инновационные Финансовые Ресурсы_NEW\r\n * Инсталляция: КБ\r\n *Слой изоляции\r\n * Нагрузка: 300 tps\r\n * Поставка: Типовая\r\n * Команда: Загрузка-1",
+            "tasks": [
+              {
+               "planned_end": "2024-01-10",
+               "duedate": "2024-01-25",
+               "components": "K1"
+              },
+              {
+               "planned_end": "2024-01-20",
+               "duedate": "2024-02-25",
+               "components": "K2"
+              },
+              {
+               "planned_end": "2024-02-05",
+               "duedate": "2024-02-25",
+               "components": "K3"
+              },
+		    {
+               "planned_end": "2024-02-25",
+               "duedate": "2024-03-10",
+               "components": "K4"
+              },
+              {
+               "planned_end": "2024-03-10",
+               "duedate": "2024-03-25",
+               "components": "K5"
+              },
+              {
+               "planned_end": "2024-03-25",
+               "duedate": "2024-04-20",
+               "components": "K6"
+              },
+              {
+               "planned_end": "2024-04-20",
+               "duedate": "2024-05-20",
+               "components": "K7"
+              }
+	        ],
+            "story": [
+              {
+               "planned_end": "2024-05-10",
+               "duedate": "2024-05-25",
+               "components": "ROV"
+               },
+              {
+               "planned_end": "2024-05-25",
+               "duedate": "2024-06-14",
+               "components": "InitLoad"
+              },
+              {
+               "planned_end": "2024-06-14",
+               "duedate": "2024-06-30",
+               "components": "OE"
+              },
+              {
+               "planned_end": "2024-06-30",
+               "duedate": "2024-07-15",
+               "components": "PE"
+              }
+            ]
         }
     ]
 }
+

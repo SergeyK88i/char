@@ -80,26 +80,29 @@ const Select =({posts}: Props) => {
           <CommandEmpty>Источник не найден</CommandEmpty>
           <CommandGroup>
             {posts.map((framework) => (
-                
-              <CommandItem
-                key={framework.name}
-                value={framework.name}
-                
-                onSelect={(currentValue) => {
-                  setValue(currentValue === value ? "" : currentValue)
-                  setOpen(false)
-                }}
-              >
-                {/* {framework.name} */}
-                <Link href={`/dashboard/${framework.id}`}>{framework.name}</Link>
-                <AiOutlineCheck
-                  className={cn(
-                    "ml-auto h-4 w-4",
-                    value === framework.name ? "opacity-100" : "opacity-0"
-                  )}
-                />
-                
-              </CommandItem>
+
+                <Link href={`/dashboard/${framework.id}`}>
+                      <CommandItem
+                        key={framework.name}
+                        value={framework.name}
+                        
+                        onSelect={(currentValue) => {
+                          setValue(currentValue === value ? "" : currentValue)
+                          setOpen(false)
+                        }}
+                      >
+                        {framework.name}
+                        {/* <Link href={`/dashboard/${framework.id}`}>{framework.name}</Link> */}
+                        <AiOutlineCheck
+                          className={cn(
+                            "ml-auto h-4 w-4",
+                            value === framework.name ? "opacity-100" : "opacity-0"
+                          )}
+                        />
+                        
+                      </CommandItem>
+                </Link>
+
             ))}
           </CommandGroup>
         </Command>

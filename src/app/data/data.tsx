@@ -164,7 +164,7 @@ export const initTasks = (data: any) => {
       // end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 5),
       name: K5_combinedString,
       id: "Task 10",
-      progress: 100,
+      progress: 0,
       // isDisabled: true,
       type: "task",
       
@@ -185,7 +185,7 @@ export const initTasks = (data: any) => {
       end: new Date(K6_endYear, K6_endMonth - 1, K6_endDay ),
       name: K6_combinedString,
       id: "Task 12",
-      progress: 100,
+      progress: 0,
       
       type: "task",
       
@@ -195,7 +195,7 @@ export const initTasks = (data: any) => {
       end: new Date(K7_endYear, K7_endMonth - 1, K7_endDay ),
       name: K7_combinedString,
       id: "Task 14",
-      progress: 100,
+      progress: 0,
       
       type: "task",
       
@@ -205,7 +205,7 @@ export const initTasks = (data: any) => {
       end: new Date(ROV_endYear, ROV_endMonth - 1, ROV_endDay ),
       name: ROV_combinedString,
       id: "Task 15",
-      progress: 100,
+      progress: 0,
       // isDisabled: true,
       type: "task",
       // dependencies: ["Task 14"],
@@ -215,7 +215,7 @@ export const initTasks = (data: any) => {
       end: new Date(InitLoad_endYear, InitLoad_endMonth - 1, InitLoad_endDay ),
       name: InitLoad_combinedString,
       id: "Task 16",
-      progress: 100,
+      progress: 0,
       // isDisabled: true,
       type: "task",
       // dependencies: ["Task 15"],
@@ -241,7 +241,7 @@ export const initTasks = (data: any) => {
       end: new Date(PE_endYear, PE_endMonth - 1, PE_endDay ),
       name: PE_combinedString,
       id: "Task 18",
-      progress: 100,
+      progress: 0,
       // isDisabled: true,
       type: "task",
       // dependencies: ["Task 17"],
