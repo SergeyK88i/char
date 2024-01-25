@@ -15,7 +15,7 @@ const SignInForm = () => {
             redirect: false,
         });
         if (res && !res.error) {
-            router.push('/profile')
+            router.push('/dashboard')
         } else {
             console.log(res)
         }

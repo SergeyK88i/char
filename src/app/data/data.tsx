@@ -167,6 +167,7 @@ export const initTasks = (data: any) => {
       progress: 100,
       // isDisabled: true,
       type: "task",
+      
       // dependencies: ["Task 9"],
     },
     // {

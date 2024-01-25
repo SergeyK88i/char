@@ -59,9 +59,9 @@ export default async function TopDashboard({params: {id} }: Props){
 
 
     return (
-        <div id="topDashboard" className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
-        {/* <div ref={pdfRef}> */}
-        {/* <div className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400"> */}
+        // <div id="topDashboard" className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
+        // {/* <div ref={pdfRef}> */}
+        <div className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
             <div className="grid lg:grid-cols-10 p-4 gap-2 pb-0">
                 <div className="lg:col-span-3 col-span-1 flex justify-between w-full bg-white  border p-4 rounded-lg">
                     <div className="flex flex-col w-full">
