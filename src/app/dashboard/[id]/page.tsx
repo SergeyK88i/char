@@ -7,6 +7,7 @@ import Link from "next/link"
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { getById } from '../DownloadData';
+import TopDashboard from '../TopDashboard';
 // https://my-json-server.typicode.com/SergeyK88i/testDB/source
 // async function getData(id: string) {
 //     const response = await fetch(`https://my-json-server.typicode.com/SergeyK88i/testDB/source/${id}`, {
@@ -24,7 +25,7 @@ type Props = {
 }
 
 
-export default async function TopDashboard({params: {id} }: Props){
+export default async function TopDash({params: {id} }: Props){
     // необходимо раскоментировать use client, функцию downloadPDF, добавить в Barchart функцию downloadPDF={downloadPDF}, в компоненте Barchart добавить props downloadPDF и аргумент в компонент barchart, добавить oneClick
     // const pdfRef = useRef();
 
@@ -57,18 +58,19 @@ export default async function TopDashboard({params: {id} }: Props){
 
     const [v1, v2, v3, v4, v5, v6, v7] = post?.description.split("*")
 
-
+    // {post?.tasks[0].duedate}
     return (
         // <div id="topDashboard" className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
         // {/* <div ref={pdfRef}> */}
         <div className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
-            <div className="grid lg:grid-cols-10 p-4 gap-2 pb-0">
+            <TopDashboard post={post}/>
+            {/* <div className="grid lg:grid-cols-10 p-4 gap-2 pb-0">
                 <div className="lg:col-span-3 col-span-1 flex justify-between w-full bg-white  border p-4 rounded-lg">
                     <div className="flex flex-col w-full">
                         <h2><span className="font-bold">Блок:</span> {post?.corporate_unit} </h2>
                         
                         <h1 className="my-5 "> <span className="font-bold">Источник:</span> {post?.name}</h1>
-                        {/* {post?.tasks[0].duedate} */}
+                        
                         <p><span className="font-bold">КЭ:</span> {post.ci}</p>
                         <p><span className="font-bold">Отв. от ДИТ:</span> {post?.assignee_displayName_DIT}</p>
                         <p><span className="font-bold">Отв. от SD:</span> {post?.assignee_displayName_CAP} </p>
@@ -85,9 +87,7 @@ export default async function TopDashboard({params: {id} }: Props){
                     <li>{v6}</li>
                     <li>{v7}</li>
                 </ul>
-                {/* <div className="row text-center mt-5">
-                    <button className="btn btn-primary" onClick={downloadPDF}>Download PDF</button>
-                </div> */}
+                
                 </div>
                 <div className="lg:col-span-2 col-span-1 flex justify-between w-full bg-white border p-4 rounded-lg">
                     <ul className="text-left w-full ">
@@ -106,15 +106,15 @@ export default async function TopDashboard({params: {id} }: Props){
                     <h1>Проблемы, влияющие на исполнение планов: </h1>
                 </div>
                 
-            </div>
-            <div className="px-4 pt-2 pb-8 grid md:grid-cols-12 grid-cols-1 gap-2">
+            </div> */}
+            {/* <div className="px-4 pt-2 pb-8 grid md:grid-cols-12 grid-cols-1 gap-2"> */}
                 
                 {/* <Barchart downloadPDF={downloadPDF} data={post}/> */}
-                <Barchart data={post}/>
+                {/* <Barchart data={post}/> */}
                 {/* <RecentOrders /> */}
                 
                 
-            </div>
+            {/* </div> */}
         </div>
     )
 }

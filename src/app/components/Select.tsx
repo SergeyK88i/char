@@ -93,12 +93,12 @@ const Select =({posts}: Props) => {
                       >
                         {framework.name}
                         {/* <Link href={`/dashboard/${framework.id}`}>{framework.name}</Link> */}
-                        <AiOutlineCheck
+                        {/* <AiOutlineCheck
                           className={cn(
                             "ml-auto h-4 w-4",
                             value === framework.name ? "opacity-100" : "opacity-0"
                           )}
-                        />
+                        /> */}
                         
                       </CommandItem>
                 </Link>
