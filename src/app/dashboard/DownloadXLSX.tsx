@@ -10,7 +10,7 @@ export async function downloadToExcel() {
                 {label:"ID Загрузки",value: 'id'},
                 {label:"Источник",value: 'name'},
                 {label:"Блок",value: 'block'},
-                {label:"Статус Эпика",value: 'statusEpic'},
+                {label:"Статус Эпика",value: 'status'},
                 {label:"Текущий статус",value: 'changeStatus'},
                 {label:"Отв. от SD",value: 'person'},
             ],
