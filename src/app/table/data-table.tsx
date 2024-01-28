@@ -73,24 +73,7 @@ export function DataTable<TData, TValue>({
     },
   })
 
-  const pdfRef = useRef();
-  const downloadPDF = () => {
-    const input = pdfRef.current;
-    html2canvas(input).then((canvas) => {
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF('l','mm','a4', true);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = pdf.internal.pageSize.getHeight();
-      const imgWidth = canvas.width;
-      const imgHeight = canvas.height;
-      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-      const imgX = (pdfWidth - imgWidth * ratio) / 2;
-      const imgY = 30;
-      pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
-      
-      pdf.save('table.pdf');
-    })
-  }
+
   // фильтр по прогрессу
   function handleFilterStatus(arg: string){
     let allColumns = table.getAllColumns();
@@ -128,7 +111,7 @@ const handle_3 = () => {
     handleFilterBlock("КИБ");
 }
   return (
-<div className="p-5 pt-2 bg-white border rounded-lg" ref={pdfRef} >
+<div className="p-5 pt-2 bg-white border rounded-lg" >
   
   <div className="flex space-x-1 pb-2">
 <>
@@ -144,7 +127,7 @@ const handle_3 = () => {
             
 {/* </div> */}
 
-<Button onClick={() => handle_1()} className="bg-gradient-to-r from-violet-300 to-violet-400" >Status</Button>
+<Button onClick={() => handle_1()} className="bg-gradient-to-r from-violet-300 to-violet-400" >Статус</Button>
 <Button onClick={() => handle_2()} className="mx-1 bg-gradient-to-r from-violet-300 to-violet-400">РБ</Button>
 {/* <input type="checkbox" onChange={() => handle_2()} className="mx-1 bg-blue-400 hover:bg-blue-500" /> */}
 <Button onClick={() => handle_3()} className="bg-gradient-to-r from-violet-300 to-violet-400">КИБ</Button>

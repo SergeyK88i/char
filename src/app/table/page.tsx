@@ -1,28 +1,10 @@
+import { getAllData } from "../dashboard/DownloadData"
 import { Payment, columns } from "./columns"
 import { DataTable } from "./data-table"
 
  export async function getData(): Promise<Payment[]> {
-  // Fetch data from your API here.
   return [
-    // {
-    //     id: "8",
-    //     amount: 100,
-    //     statusEpic: "In Progress",
-    //     name: "A",
-    //     block: "KIB",
-    //     view_table: "view",
-    //     changeStatus: "IFT"
-
-    // },
-    // {
-    //     id: "9",
-    //     amount: 50,
-    //     statusEpic: "In Progress",
-    //     name: "B",
-    //     block: "RB",
-    //     view_table: "view",
-    //     changeStatus: "IFT"
-    // },
+   
     {
         id: "4",
         amount: 500,
@@ -199,6 +181,7 @@ import { DataTable } from "./data-table"
 
 export default async function DemoPage() {
   const data = await getData()
+  // const data = await getAllData();
 
   return (
     <div className="container mx-auto py-10 bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 p-4">

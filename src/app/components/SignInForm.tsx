@@ -35,7 +35,7 @@ const SignInForm = () => {
                                 priority
                             />
                         </div>
-                        <label className="text-gray-500">Email</label>
+                        <label className="text-gray-500">Login</label>
                         <input 
                             className="w-full py-2 bg-gray-100 text-gray-500 px-1 outline-none mb-4 rounded-lg"
                             type="email" 

@@ -2,13 +2,14 @@
 import "gantt-task-react/dist/index.css";
 import { ViewMode } from "gantt-task-react";
 import { Button } from "@/components/ui/button";
+import React, { FunctionComponent } from 'react';
 
 type ViewSwitcherProps = {
   isChecked: boolean;
   onViewListChange: (isChecked: boolean) => void;
   onViewModeChange: (viewMode: ViewMode) => void;
 };
-export const ViewSwitcher: React.SFC<ViewSwitcherProps> = ({
+export const ViewSwitcher: FunctionComponent<ViewSwitcherProps> = ({
   onViewModeChange,
   onViewListChange,
   isChecked

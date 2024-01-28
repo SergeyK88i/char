@@ -67,9 +67,14 @@ const Select =({posts}: Props) => {
           style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
         >
           {/* <CiSearch /> */}
-          {value
+          {value 
+            ? 'Найти источник' : posts.find((framework) => framework.name.toLowerCase() === value.toLocaleLowerCase())?.label ||  "Найти источник"}
+          {/* если значение истина - выводится название источника */}
+          {/* {value
             ? posts.find((framework) => framework.name.toLowerCase() === value.toLowerCase())?.label
-            : "Найти источник"}
+            : "Найти источник"} */}
+
+
           {/* <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" /> */}
           
         </Button>

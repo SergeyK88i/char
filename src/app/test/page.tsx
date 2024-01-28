@@ -61,9 +61,8 @@ export default function ComboboxDemo() {
           aria-expanded={open}
           className="w-[500px] justify-between"
         >
-          {value
-            ? frameworks.find((framework) => framework.name === value)?.label
-            : "seach..."}
+          {value 
+            ? 'найти источник' : frameworks.find((framework) => framework.name === value)?.label ||  "seach..."}
           {/* <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" /> */}
         </Button>
       </PopoverTrigger>

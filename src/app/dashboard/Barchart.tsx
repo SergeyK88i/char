@@ -87,7 +87,7 @@ export default function App({data,downloadPDF}:Props, ) {
         />
         <RecentOrders />
         {/* <Button className="ml-2 bg-gradient-to-r from-emerald-500 to-lime-600 "> Сохранить в PDF </Button> */}
-        <Button onClick={downloadPDF} className="ml-2 bg-gradient-to-r from-emerald-500 to-lime-600 "> Сохранить в PDF </Button>
+        <Button onClick={downloadPDF} className="ml-2 bg-gradient-to-r from-emerald-500 to-lime-600 flex items-center "> Сохранить в PDF </Button>
       </div>
 
       <div  className="flex flex-row items-start w-full md:col-span-12 relative lg:h-[60vh] h-[60vh] m-auto p-4 pt-0 border rounded-lg bg-white overflow-auto">
