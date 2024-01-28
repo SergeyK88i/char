@@ -1,5 +1,6 @@
 import xlsx, { IJsonSheet } from 'json-as-xlsx'
-import { getData } from '../table/page'
+import { getAllData } from './DownloadData';
+// import { getData } from '../table/page'
 
 export async function downloadToExcel() {
     let columns: IJsonSheet[] = [
@@ -13,7 +14,7 @@ export async function downloadToExcel() {
                 {label:"Текущий статус",value: 'changeStatus'},
                 {label:"Отв. от SD",value: 'person'},
             ],
-            content: await getData(),
+            content: await getAllData(),
         },
 
     ];

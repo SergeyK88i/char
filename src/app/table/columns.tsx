@@ -149,25 +149,25 @@ export const columns: ColumnDef<Payment>[] = [
       //     )
       //   },
       // },
-      {
-        id: "act",
-        // accessorKey: "view_table",
-        header: "",
-        cell: ({row}) => {
+      // {
+      //   id: "act",
+      //   // accessorKey: "view_table",
+      //   header: "",
+      //   cell: ({row}) => {
           
-            const p = row.original
-            // console.log(p.id);
-            return (
+      //       const p = row.original
+      //       // console.log(p.id);
+      //       return (
               
               
-                <div>
-                  <FcDownload size={20}/>
-                </div>
+      //           <div>
+      //             <FcDownload size={20}/>
+      //           </div>
                 
               
-            )
-        }
-      },
+      //       )
+      //   }
+      // },
       {
         id: "actions",
         // accessorKey: "view_table",
