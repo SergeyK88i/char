@@ -19,12 +19,12 @@ import Link from "next/link"
 // You can use a Zod schema here if you want.
 export type Payment = {
   id: string
-  amount: number
-  statusEpic: "In Progress" | "Done" | "Open" | "Todo"
+  // amount: number
+  status: "In Progress" | "Done" | "Open" | "Todo"
   name: string
-  block: string
+  corporate_unit: string
   view_table: string
-  changeStatus: "IFT" | "PSI" | "Init TKK load" | "OE" | "PE" | "Todo"
+  change: "IFT" | "PSI" | "Init TKK load" | "OE" | "PE" | "Todo"
   person: string
 }
 
@@ -89,7 +89,7 @@ export const columns: ColumnDef<Payment>[] = [
       },
     },
     {
-      accessorKey: "block",
+      accessorKey: "corporate_unit",
       header: ({ column }) => {
         return (
           <Button
@@ -104,7 +104,7 @@ export const columns: ColumnDef<Payment>[] = [
       },
     },
     {
-        accessorKey: "statusEpic",
+        accessorKey: "status",
         header: ({ column }) => {
           return (
             <Button
@@ -120,7 +120,7 @@ export const columns: ColumnDef<Payment>[] = [
       },
     
       {
-        accessorKey: "changeStatus",
+        accessorKey: "change",
         header: ({ column }) => {
           return (
             <Button
@@ -134,21 +134,21 @@ export const columns: ColumnDef<Payment>[] = [
           )
         },
       },
-      // {
-      //   accessorKey: "person",
-      //   header: ({ column }) => {
-      //     return (
-      //       <Button
-      //       className="px-0"
-      //         variant="ghost"
-      //         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-      //       >
-      //         Отв. SD
-      //         <ArrowUpDown className="ml-2 h-4 w-4" />
-      //       </Button>
-      //     )
-      //   },
-      // },
+      {
+        accessorKey: "assignee_displayName_CAP",
+        header: ({ column }) => {
+          return (
+            <Button
+            className="px-0"
+              variant="ghost"
+              onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            >
+              Отв. SD
+              <ArrowUpDown className="ml-2 h-4 w-4" />
+            </Button>
+          )
+        },
+      },
       // {
       //   id: "act",
       //   // accessorKey: "view_table",

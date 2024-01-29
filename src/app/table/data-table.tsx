@@ -78,14 +78,14 @@ export function DataTable<TData, TValue>({
   function handleFilterStatus(arg: string){
     let allColumns = table.getAllColumns();
     // console.log("allColumns: ",allColumns);
-    let fName = allColumns.filter(el=>el.id === "statusEpic")[0];
+    let fName = allColumns.filter(el=>el.id === "status")[0];
     // console.log("fName: ",fName);
     fName.setFilterValue(arg)
     }
   function handleFilterBlock(arg: string){
       let allColumns = table.getAllColumns();
         // console.log("allColumns: ",allColumns);
-      let fName = allColumns.filter(el=>el.id === "block")[0];
+      let fName = allColumns.filter(el=>el.id === "corporate_unit")[0];
         // console.log("fName: ",fName);
       fName.setFilterValue(arg)
     }
@@ -111,6 +111,7 @@ const handle_3 = () => {
     handleFilterBlock("КИБ");
 }
   return (
+   
 <div className="p-5 pt-2 bg-white border rounded-lg" >
   
   <div className="flex space-x-1 pb-2">

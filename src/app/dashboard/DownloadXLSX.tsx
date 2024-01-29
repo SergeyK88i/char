@@ -9,15 +9,17 @@ export async function downloadToExcel() {
             columns: [
                 {label:"ID Загрузки",value: 'id'},
                 {label:"Источник",value: 'name'},
-                {label:"Блок",value: 'block'},
-                {label:"Статус Эпика",value: 'statusEpic'},
-                {label:"Текущий статус",value: 'changeStatus'},
-                {label:"Отв. от SD",value: 'person'},
+                {label:"Блок",value: 'corporate_unit'},
+                {label:"Статус Эпика",value: 'status'},
+                {label:"Текущий статус",value: 'change'},
+                {label:"Отв. от SD",value: 'assignee_displayName_CAP'},
             ],
             content: await getAllData(),
+            
         },
 
     ];
+    
     let settings = {
         fileName: "Dashboard Excel"
     }
