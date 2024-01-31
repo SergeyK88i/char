@@ -29,7 +29,7 @@ type Props = {
 
 export default function TopDashboard({post}: any){
     // необходимо раскоментировать use client, функцию downloadPDF, добавить в Barchart функцию downloadPDF={downloadPDF}, в компоненте Barchart добавить props downloadPDF и аргумент в компонент barchart, добавить oneClick
-    const pdfRef = useRef();
+    // const pdfRef = useRef();
 
   const downloadPDF = () => {
     // const input = pdfRef.current;

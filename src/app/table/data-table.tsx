@@ -35,6 +35,7 @@ import Link from "next/link"
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { downloadToExcel } from "../dashboard/DownloadXLSX"
+import Viewinfo from "../components/Viewinfo"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -110,6 +111,8 @@ const handle_3 = () => {
     handleFilterStatus("");
     handleFilterBlock("КИБ");
 }
+
+
   return (
    
 <div className="p-5 pt-2 bg-white border rounded-lg" >
@@ -128,12 +131,7 @@ const handle_3 = () => {
             
 {/* </div> */}
 
-<Button onClick={() => handle_1()} className="bg-gradient-to-r from-violet-300 to-violet-400" >Статус</Button>
-<Button onClick={() => handle_2()} className="mx-1 bg-gradient-to-r from-violet-300 to-violet-400">РБ</Button>
-{/* <input type="checkbox" onChange={() => handle_2()} className="mx-1 bg-blue-400 hover:bg-blue-500" /> */}
-<Button onClick={() => handle_3()} className="bg-gradient-to-r from-violet-300 to-violet-400">КИБ</Button>
-{/* <Button onClick={() => handleFilterBlock("KIB")} className="bg-blue-400 hover:bg-blue-500">КИБ</Button> */}
-<Button onClick={() => handleResetFilters()} className="mx-1 bg-gradient-to-r from-violet-300 to-violet-400">Все</Button>
+
 
 <Input
               placeholder="Поиск по наименованию источника"
@@ -145,13 +143,28 @@ const handle_3 = () => {
             />
 
 <Button onClick={()=>downloadToExcel()} className="bg-gradient-to-r from-emerald-500 to-lime-600 ">
-  Экспорт в эксель
+  Экспорт в excel
 </Button>
+
+
+<Button onClick={() => handle_1()} className="bg-gradient-to-r from-violet-300 to-violet-400" >Статус</Button>
+<Button onClick={() => handle_2()} className="mx-1 bg-gradient-to-r from-violet-300 to-violet-400">РБ</Button>
+{/* <input type="checkbox" onChange={() => handle_2()} className="mx-1 bg-blue-400 hover:bg-blue-500" /> */}
+<Button onClick={() => handle_3()} className="bg-gradient-to-r from-violet-300 to-violet-400">КИБ</Button>
+{/* <Button onClick={() => handleFilterBlock("KIB")} className="bg-blue-400 hover:bg-blue-500">КИБ</Button> */}
+<Button onClick={() => handleResetFilters()} className="mx-1 bg-gradient-to-r from-violet-300 to-violet-400">Все</Button>
+{/* <Button className="border bg-yellow-500 hover:bg-yellow-600">
+  show
+</Button> */}
+
+      {/* <div className="mb-1 ">
+        <Viewinfo data={data}/>
+      </div> */}
 
 <DropdownMenu >
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
-              Columns
+              Column
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">

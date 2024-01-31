@@ -16,6 +16,8 @@ import { GrLogin } from "react-icons/gr";
 import { BsBarChartSteps } from "react-icons/bs";
 import { TbDeviceDesktopSearch } from "react-icons/tb";
 import { TbListSearch } from "react-icons/tb";
+import { BiEdit } from "react-icons/bi";
+import { BiSolidPieChartAlt2 } from "react-icons/bi";
 
 export default function Slidebar ({children}: any) {
     const session = useSession();
@@ -53,9 +55,10 @@ export default function Slidebar ({children}: any) {
                             {session?.data && (
                             <Link href="/table">
                                 <div className="bg-purple-800 hover:bg-green-700 text-white p-3 my-2 rounded-lg inline-block">
-                                    
+                                <BiSolidPieChartAlt2 size={20}/>
+                                    {/* <BiEdit size={20}/> */}
                                     {/* <ImDatabase size={20}/> */}
-                                    <CiViewTable size={20} />
+                                    {/* <CiViewTable size={20} /> */}
                                     {/* <TbListSearch size={20} /> */}
                                 </div>   
                             

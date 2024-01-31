@@ -26,6 +26,8 @@ export type Payment = {
   view_table: string
   change: "IFT" | "PSI" | "Init TKK load" | "OE" | "PE" | "Todo"
   person: string
+  days_shift: number
+  duedate: string
 }
 
 export const columns: ColumnDef<Payment>[] = [
@@ -135,7 +137,7 @@ export const columns: ColumnDef<Payment>[] = [
         },
       },
       {
-        accessorKey: "assignee_displayName_CAP",
+        accessorKey: "person",
         header: ({ column }) => {
           return (
             <Button
@@ -147,6 +149,42 @@ export const columns: ColumnDef<Payment>[] = [
               <ArrowUpDown className="ml-2 h-4 w-4" />
             </Button>
           )
+        },
+      },
+      // {
+      //   accessorKey: "days_shift",
+      //   header: ({ column }) => {
+      //     return (
+      //       <Button
+      //       className="px-0"
+      //         variant="ghost"
+      //         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+      //       >
+      //         Текущий сдвиг
+      //         <ArrowUpDown className="ml-2 h-4 w-4" />
+      //       </Button>
+      //     )
+      //   },
+      // },
+      {
+        accessorKey: "days_shift",
+        header: ({ column }) => {
+          return (
+            <Button
+              className="px-0"
+              variant="ghost"
+              onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            >
+              Текущий сдвиг
+              <ArrowUpDown className="ml-2 h-4 w-4" />
+            </Button>
+          );
+        },
+        cell: ({ row }) => {
+          const isPositive = row.original.days_shift > 0;
+          return (
+            <span style={{ color: isPositive ? "red" : "inherit" }}>{row.original.days_shift}</span>
+          );
         },
       },
       // {
@@ -168,27 +206,33 @@ export const columns: ColumnDef<Payment>[] = [
       //       )
       //   }
       // },
-      {
-        id: "actions",
-        // accessorKey: "view_table",
-        header: "",
-        cell: ({row}) => {
+
+
+
+      // {
+      //   id: "actions",
+      //   // accessorKey: "view_table",
+      //   header: "",
+      //   cell: ({row}) => {
           
-            const p = row.original
-            // console.log(p.id);
-            return (
+      //       const p = row.original
+      //       // console.log(p.id);
+      //       return (
               
-              <Link href={`http://localhost:3000/dashboard/${p.id}`}>
-                <div>
-                  <FcBarChart size={20}/>
-                </div>
-                {/* <Button className="bg-blue-500 hover:bg-blue-400">
-                    view_table
-                </Button > */}
-              </Link>
-            )
-        }
-      },
+      //         <Link href={`http://localhost:3000/dashboard/${p.id}`}>
+      //           <div>
+      //             <FcBarChart size={20}/>
+      //           </div>
+      //           {/* <Button className="bg-blue-500 hover:bg-blue-400">
+      //               view_table
+      //           </Button > */}
+      //         </Link>
+      //       )
+      //   }
+      // },
+
+
+
     // {
     //     id: "actions",
     //     cell: ({ row }) => {
