@@ -30,8 +30,8 @@ const SignInForm = () => {
                                 // className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
                                 src="/Sber_znachek_green.svg"
                                 alt="/Sber_znachek_green.svg"
-                                width={80}
-                                height={80}
+                                width={60}
+                                height={60}
                                 priority
                             />
                         </div>

@@ -196,6 +196,7 @@ export const initTasks = (data: any) => {
       name: K7_combinedString,
       id: "Task 14",
       progress: 0,
+      // dependencies: ["Task 1"],
       
       type: "task",
       
